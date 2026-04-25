@@ -3,14 +3,14 @@ const products = [
     id: 1,
     name: "Veste coupe-vent",
     price: 49,
-    attribute: "Coupe-vent",
-    description: "Parfaite pour le sport",
-    long_description: "Veste légère en nylon taslan, idéale contre le vent.",
-    image_url: "images/veste.jpg",
-    gallery: ["images/veste1.jpg", "images/veste2.jpg"],
+    attribute: "gilet",
+    description: "Parfait pour le sport",
+    long_description: "Gilet crocheté léger et respirant, idéal pour les activités sportives et les journées fraîches.",
+    image_url: "images/ChatGPT Image 25 avr. 2026, 10_48_41.png",
+    gallery: ["images/ChatGPT Image 25 avr. 2026, 10_48_41.png", "images/ChatGPT Image 25 avr. 2026, 10_48_41.png"],
     stock: 10,
     sizes: ["S", "M", "L"],
-    colors: ["Noir", "Gris"]
+    colors: ["Blanc"]
   },
   {
     id: 2,

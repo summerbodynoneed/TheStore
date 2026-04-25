@@ -14,4 +14,108 @@
     <a href="/produits">Produits</a> | 
     <a href="/contact">Contact</a>
   </div>
+
+  <h2 style="margin-top: 30px;">Nos produits phares</h2>
+
+  <div class="carousel-container">
+    <button class="carousel-btn carousel-prev" onclick="prevSlide()">❮</button>
+    
+    <div class="carousel">
+      <div class="carousel-inner" id="carousel-inner">
+        <!-- Les produits vont s'afficher ici dynamiquement -->
+      </div>
+    </div>
+
+    <button class="carousel-btn carousel-next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <div class="carousel-dots" id="carousel-dots">
+    <!-- Les points de pagination vont s'afficher ici -->
+  </div>
+
 </div>
+
+<script src="product.js"></script>
+<script>
+  let currentSlide = 0;
+  const itemsPerView = 3;
+
+  // Remplir le carousel avec tous les produits
+  function initCarousel() {
+    const carouselInner = document.getElementById('carousel-inner');
+    carouselInner.innerHTML = '';
+
+    products.forEach((product, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      slide.style.cursor = 'pointer';
+      
+      slide.innerHTML = `
+        <div class="carousel-item">
+          <img src="${product.image_url}" alt="${product.name}" onclick="window.location.href='/products.html'">
+          <h3>${product.name}</h3>
+          <p>${product.price} €</p>
+        </div>
+      `;
+      
+      carouselInner.appendChild(slide);
+    });
+
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    slides.forEach((slide, index) => {
+      if (index >= currentSlide && index < currentSlide + itemsPerView) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+
+    updateDots();
+  }
+
+  function nextSlide() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (currentSlide < slides.length - itemsPerView) {
+      currentSlide++;
+    } else {
+      currentSlide = 0;
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+    } else {
+      currentSlide = Math.max(0, document.querySelectorAll('.carousel-slide').length - itemsPerView);
+    }
+    updateCarousel();
+  }
+
+  function updateDots() {
+    const dotsContainer = document.getElementById('carousel-dots');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const numDots = Math.ceil(slides.length / itemsPerView);
+    
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'carousel-dot' + (i === Math.floor(currentSlide / itemsPerView) ? ' active' : '');
+      dot.onclick = () => {
+        currentSlide = i * itemsPerView;
+        updateCarousel();
+      };
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  // Initialiser le carousel au chargement
+  initCarousel();
+</script>
+
+</body>
+</html>
