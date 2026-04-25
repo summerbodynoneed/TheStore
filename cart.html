@@ -3,18 +3,55 @@
   <meta charset="UTF-8">
   <title>Panier</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    
+    .cart-item-details {
+      flex: 1;
+    }
+    
+    .cart-item-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .cart-item-actions button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    
+    .cart-item-actions span {
+      min-width: 30px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Mon panier</h1>
+  <div style="max-width:800px; margin:0 auto;">
+    <a href="index.html">← Retour à l'accueil</a>
+    
+    <h1>Mon panier</h1>
 
-  <div id="cart-items"></div>
+    <div id="cart-items"></div>
 
-  <h2 id="total"></h2>
+    <h2 id="total"></h2>
 
-  <button onclick="clearCart()">Vider le panier</button>
-  <button onclick="checkout()">Commander</button>
+    <div style="margin-top: 20px;">
+      <button onclick="checkout()" style="background-color: green; color: white; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Commander</button>
+      <button onclick="clearCart()" style="background-color: red; color: white; padding: 10px 20px; cursor: pointer;">Vider le panier</button>
+    </div>
+  </div>
 
   <script src="product.js"></script>
   <script src="cart.js"></script>

@@ -19,65 +19,16 @@
     </select>
   </div>
 
+  <div id="quantity-selector" style="margin: 20px 0;">
+    <label for="quantity">Quantité :</label>
+    <input type="number" id="quantity" min="1" value="1" style="width: 50px;">
+  </div>
+
   <button id="add-to-cart-btn">Ajouter au panier</button>
   <p id="message"></p>
 
   <script src="product.js"></script>
-  <script>
-    let currentProductId = null;
-
-    // Récupérer l'ID du produit depuis l'URL
-    const urlParams = new URLSearchParams(window.location.search);
-    currentProductId = parseInt(urlParams.get('id')) || 1;
-
-    // Afficher les détails du produit
-    const product = products.find(p => p.id === currentProductId);
-    if (product) {
-      document.getElementById('title').innerText = product.name;
-      document.getElementById('image').src = product.image_url;
-      document.getElementById('price').innerText = `Prix : ${product.price} €`;
-      document.getElementById('desc').innerText = product.long_description || product.description;
-
-      // Remplir le sélecteur de taille
-      const sizeSelect = document.getElementById('size');
-      if (product.sizes && product.sizes.length > 0) {
-        product.sizes.forEach(size => {
-          const option = document.createElement('option');
-          option.value = size;
-          option.innerText = size;
-          sizeSelect.appendChild(option);
-        });
-      } else {
-        document.getElementById('size-selector').style.display = 'none';
-      }
-    }
-
-    // Ajouter au panier
-    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-      const sizeSelect = document.getElementById('size');
-      const selectedSize = sizeSelect.value;
-
-      if (product.sizes && product.sizes.length > 0 && !selectedSize) {
-        document.getElementById('message').innerText = "Veuillez choisir une taille !";
-        document.getElementById('message').style.color = "red";
-        return;
-      }
-
-      // Récupérer le panier
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-      // Ajouter le produit (avec taille si applicable)
-      const cartItem = {
-        id: product.id,
-        size: selectedSize || null
-      };
-      cart.push(cartItem);
-      localStorage.setItem("cart", JSON.stringify(cart));
-
-      document.getElementById('message').innerText = `${product.name} ajouté au panier !`;
-      document.getElementById('message').style.color = "green";
-    });
-  </script>
+  <script src="product-detail.js"></script>
 
 </body>
 </html>
