@@ -159,3 +159,21 @@ button:active {
 #total {
   margin-top: 20px;
 }
+
+/* Styles rétro bonus */
+.marquee {
+  background: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 5px;
+  animation: marquee-scroll 10s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

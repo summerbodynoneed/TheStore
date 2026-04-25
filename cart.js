@@ -14,22 +14,32 @@ function displayCart() {
 
   let total = 0;
 
-  cart.forEach(id => {
-    const product = products.find(p => p.id === Number(id));
+  cart.forEach((item, index) => {
+    const productId = item.id || item;
+    const product = products.find(p => p.id === Number(productId));
 
     if (product) {
       total += product.price;
 
+      const sizeText = item.size ? ` (Taille: ${item.size})` : "";
+
       cartContainer.innerHTML += `
         <div class="cart-item">
-          <h3>${product.name}</h3>
+          <h3>${product.name}${sizeText}</h3>
           <p>${product.price} €</p>
+          <button onclick="removeFromCart(${index})">Supprimer</button>
         </div>
       `;
     }
   });
 
   totalElement.innerText = "Total : " + total + " €";
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
 }
 
 function clearCart() {
