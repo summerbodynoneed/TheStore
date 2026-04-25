@@ -8,33 +8,30 @@
 <body>
   <h1>Nos Produits</h1>
 
-  <div class="product">
-    <img src="produit1.jpg" alt="Produit 1" onclick="openImage(this.src)">
-    <div class="price" onclick="redirectToOrder()">Prix : Pré commande</div>
-  </div>
+  <div class="product-grid" id="product-list"></div>
 
-  <div class="product">
-    <img src="produit2.jpg" alt="Produit 2" onclick="openImage(this.src)">
-    <div class="price" onclick="redirectToOrder()">Prix : Pré commande</div>
-  </div>
-
-  <div id="modal" onclick="closeImage()">
-    <img id="modal-img" src="" alt="Image agrandie">
-  </div>
-
+  <script src="product.js"></script>
   <script>
-    function openImage(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('modal').style.display = 'flex';
-    }
+    // Afficher tous les produits dans une grille
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';
 
-    function closeImage() {
-      document.getElementById('modal').style.display = 'none';
-    }
-
-    function redirectToOrder() {
-      window.location.href = "commande.html";
-    }
+    products.forEach(product => {
+      const productTile = document.createElement('div');
+      productTile.className = 'product-tile';
+      
+      productTile.innerHTML = `
+        <div class="product-image-container">
+          <img src="${product.image_url}" alt="${product.name}" style="max-width: 100%; max-height: 150px;">
+        </div>
+        <h3>${product.name}</h3>
+        <p><strong>${product.price} €</strong></p>
+        <p>${product.description}</p>
+        <div class="details-button" onclick="window.location.href='product.html?id=${product.id}'">Voir les détails</div>
+      `;
+      
+      productList.appendChild(productTile);
+    });
   </script>
 </body>
 </html>
