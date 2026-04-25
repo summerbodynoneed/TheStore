@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Produits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Nos Produits</h1>
+
+  <div class="product">
+    <img src="produit1.jpg" alt="Produit 1" onclick="openImage(this.src)">
+    <div class="price" onclick="redirectToOrder()">Prix : Pré commande</div>
+  </div>
+
+  <div class="product">
+    <img src="produit2.jpg" alt="Produit 2" onclick="openImage(this.src)">
+    <div class="price" onclick="redirectToOrder()">Prix : Pré commande</div>
+  </div>
+
+  <div id="modal" onclick="closeImage()">
+    <img id="modal-img" src="" alt="Image agrandie">
+  </div>
+
+  <script>
+    function openImage(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeImage() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function redirectToOrder() {
+      window.location.href = "commande.html";
+    }
+  </script>
+</body>
+</html>
