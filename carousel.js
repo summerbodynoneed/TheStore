@@ -12,7 +12,10 @@ function initCarousel() {
   
   carouselInner.innerHTML = '';
 
-  products.forEach((product) => {
+  // Limiter à 3 produits pour la page d'accueil
+  const homepageProducts = products.slice(0, 3);
+
+  homepageProducts.forEach((product) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.style.cursor = 'pointer';
