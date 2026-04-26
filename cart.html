@@ -1,60 +1,46 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Panier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier - Boutique en ligne</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-    }
-    
-    .cart-item-details {
-      flex: 1;
-    }
-    
-    .cart-item-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    
-    .cart-item-actions button {
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    
-    .cart-item-actions span {
-      min-width: 30px;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
 
-  <div style="max-width:800px; margin:0 auto;">
-    <a href="index.html">← Retour à l'accueil</a>
-    
-    <h1>Mon panier</h1>
+<div class="container">
+  <header class="header-container">
+    <img src="..." alt="Logo">
+    <h1>Boutique en ligne</h1>
+    <a class="cart-link" href="cart.html" title="Voir le panier">
+      🛒
+      <span id="cart-badge" style="display:none;">0</span>
+    </a>
+  </header>
 
-    <div id="cart-items"></div>
+  <nav class="center-text">
+    <a href="index.html">Accueil</a> | 
+    <a href="products.html">Produits</a> | 
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <h2 id="total"></h2>
+  <h1>🛒 Mon Panier</h1>
 
-    <div style="margin-top: 20px;">
-      <button onclick="checkout()" style="background-color: green; color: white; padding: 10px 20px; cursor: pointer; margin-right: 10px;">Commander</button>
-      <button onclick="clearCart()" style="background-color: red; color: white; padding: 10px 20px; cursor: pointer;">Vider le panier</button>
-    </div>
+  <div id="cart-items"></div>
+
+  <h2 id="total"></h2>
+
+  <div style="margin-top: 20px;">
+    <button onclick="checkout()" style="background: linear-gradient(135deg, #00aa00 0%, #00dd00 100%); color: white; padding: 12px 20px; cursor: pointer; margin-right: 10px;">💳 Commander</button>
+    <button onclick="clearCart()" style="background: linear-gradient(135deg, #aa0000 0%, #dd0000 100%); color: white; padding: 12px 20px; cursor: pointer;">🗑️ Vider le panier</button>
   </div>
 
-  <script src="product.js"></script>
-  <script src="cart.js"></script>
+  <p style="margin-top: 30px;"><a href="products.html">← Continuer les achats</a></p>
+</div>
+
+<script src="product.js"></script>
+<script src="cart.js"></script>
 
 </body>
 </html>

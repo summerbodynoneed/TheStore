@@ -2,33 +2,59 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Produit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail Produit</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1 id="title"></h1>
-  <img id="image" width="300">
-  <p id="price"></p>
-  <p id="desc"></p>
+<div class="container">
+  <header class="header-container">
+    <img src="..." alt="Logo">
+    <h1>Boutique en ligne</h1>
+    <a class="cart-link" href="cart.html" title="Voir le panier">
+      🛒
+      <span id="cart-badge" style="display:none;">0</span>
+    </a>
+  </header>
 
-  <div id="size-selector">
-    <label for="size">Taille :</label>
-    <select id="size">
-      <option value="">-- Choisir une taille --</option>
-    </select>
+  <nav class="center-text">
+    <a href="index.html">Accueil</a> | 
+    <a href="products.html">Produits</a> | 
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="product-detail">
+    <div>
+      <img id="image" width="100%" alt="Produit">
+    </div>
+    <div class="product-info">
+      <h1 id="title"></h1>
+      <p id="price" style="font-size: 20px; color: #c49b70; font-weight: bold;"></p>
+      <p id="desc"></p>
+
+      <div id="size-selector">
+        <label for="size">🎯 Taille :</label>
+        <select id="size">
+          <option value="">-- Choisir une taille --</option>
+        </select>
+      </div>
+
+      <div id="quantity-selector">
+        <label for="quantity">📦 Quantité :</label>
+        <input type="number" id="quantity" min="1" value="1">
+      </div>
+
+      <button id="add-to-cart-btn">✨ Ajouter au panier ✨</button>
+      <p id="message"></p>
+    </div>
   </div>
+  
+  <p><a href="products.html">← Retour aux produits</a></p>
+</div>
 
-  <div id="quantity-selector" style="margin: 20px 0;">
-    <label for="quantity">Quantité :</label>
-    <input type="number" id="quantity" min="1" value="1" style="width: 50px;">
-  </div>
-
-  <button id="add-to-cart-btn">Ajouter au panier</button>
-  <p id="message"></p>
-
-  <script src="product.js"></script>
-  <script src="product-detail.js"></script>
+<script src="product.js"></script>
+<script src="product-detail.js"></script>
 
 </body>
 </html>
