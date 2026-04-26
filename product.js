@@ -22,7 +22,7 @@ const products = [
     attribute: "Vêtement",
     description: "La mue de la veste en jean",
     long_description: "Veste en jean classique avec une coupe ajustée, parfaite pour un look décontracté.",
-    image_url: "images/IMG_4968.png",
+    image_url: "images/IMG_4968.JPG",
     stock: 5,
     sizes: ["M", "L"],
     colors: ["Noir"]
@@ -34,7 +34,7 @@ const products = [
     attribute: "Vêtement",
     description: "Confortable et durable",
     long_description: "Veste de tennis pré-match, parfaite pour les échauffements et les moments de détente avant le match.",
-    image_url: "images/proto.png",
+    image_url: "images/Proto.png",
     stock: 10,
     sizes: ["S", "M", "L"],
     colors: ["Blanc"]
@@ -46,7 +46,7 @@ const products = [
     attribute: "Vêtement",
     description: "Ensemble pour jogging, quick dry",
     long_description: "Ensemble confortable et stylé, parfait pour courir et être classe en même temps.",
-    image_url: "images/ensemble.jpeg",
+    image_url: "images/Ensemble.jpeg",
     stock: 10,
     sizes: ["S", "M", "L", "XL"],
     colors: ["Gris"]
@@ -70,7 +70,7 @@ const products = [
     attribute: "Chaussures",
     description: "Inspirées de l'association sandales + chaussettes",
     long_description: "Paire de chaussures inspirée du style sandales + chaussettes, offrant un look audacieux et confortable pour les amateurs de mode.",
-    image_url: "images/ChatGPT Image 25. 4. 2026, 20_29_23.png",
+    image_url: "images/ChatGPT Image 25. 4. 2026 20_29_23.png",
     stock: 50,
     sizes: ["40", "41", "42", "43", "44"],
     colors: ["Noir"]
