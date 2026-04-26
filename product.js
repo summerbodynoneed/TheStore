@@ -22,7 +22,7 @@ const products = [
     attribute: "Vêtement",
     description: "La mue de la veste en jean",
     long_description: "Veste en jean classique avec une coupe ajustée, parfaite pour un look décontracté.",
-    image_url: "images/IMG_4968.JPG",
+    image_url: "images/à venir.png",
     stock: 5,
     sizes: ["M", "L"],
     colors: ["Noir"]
