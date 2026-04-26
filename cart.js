@@ -109,8 +109,19 @@ function showPaymentForm() {
   });
 }
 
-function handlePaymentSubmission(email) {
-  localStorage.setItem("customerEmail", email);
+async function handlePaymentSubmission(email) {
+  try {
+    const response = await fetch('http://localhost:3001/api/email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    if (!response.ok) throw new Error('Erreur lors de l\'envoi');
+  } catch (error) {
+    console.error('Erreur:', error);
+    alert('Erreur lors de la sauvegarde de l\'email');
+    return;
+  }
   
   document.getElementById("email-form").style.display = "none";
   const messageEl = document.getElementById("payment-message");
@@ -154,14 +165,25 @@ function showPostPaymentQuestion() {
     <p id="benefit-message" style="margin-top: 15px;"></p>
   `;
 
-  document.getElementById("benefit-submit").addEventListener("click", function(event) {
+  document.getElementById("benefit-submit").addEventListener("click", async function(event) {
     event.preventDefault();
     const choice = document.querySelector('input[name="benefit"]:checked');
     if (!choice) {
       alert("Veuillez choisir une option.");
       return;
     }
-    localStorage.setItem("benefitChoice", choice.value);
+    try {
+      const response = await fetch('http://localhost:3001/api/questionnaire', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ choice: choice.value })
+      });
+      if (!response.ok) throw new Error('Erreur lors de l\'envoi');
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Erreur lors de la sauvegarde de la réponse');
+      return;
+    }
     document.getElementById("benefit-message").textContent = `Merci ! Vous avez choisi : ${choice.value}.`;
   });
 }
