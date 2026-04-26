@@ -32,9 +32,11 @@
   <h2 id="total"></h2>
 
   <div style="margin-top: 20px;">
-    <button id="checkout-button" onclick="checkout()" style="background: linear-gradient(135deg, #00aa00 0%, #00dd00 100%); color: white; padding: 12px 20px; cursor: pointer; margin-right: 10px;">💳 Commander</button>
+    <button id="checkout-button" onclick="showPaymentForm()" style="background: linear-gradient(135deg, #00aa00 0%, #00dd00 100%); color: white; padding: 12px 20px; cursor: pointer; margin-right: 10px;">💳 Commander</button>
     <button id="clear-button" onclick="clearCart()" style="background: linear-gradient(135deg, #aa0000 0%, #dd0000 100%); color: white; padding: 12px 20px; cursor: pointer;">🗑️ Vider le panier</button>
   </div>
+
+  <div id="payment-form-container" style="display:none; margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;"></div>
 
   <div id="post-payment-question" style="display:none; margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;"></div>
 

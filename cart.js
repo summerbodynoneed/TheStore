@@ -77,18 +77,59 @@ function clearCart() {
   displayCart();
 }
 
-// Valider la commande
-function checkout() {
+// Afficher le formulaire de paiement par email
+function showPaymentForm() {
   const cart = getCart();
   if (cart.length === 0) {
     alert("Votre panier est vide !");
     return;
   }
 
-  // Redirection vers un lien PayPal (lien de test placeholder)
-  const returnUrl = window.location.origin + "/cart.html?payment=success";
-  const paypalUrl = "https://www.paypal.com/checkoutnow?token=EXAMPLE123&returnUrl=" + encodeURIComponent(returnUrl);
-  window.location.href = paypalUrl;
+  document.getElementById("checkout-button").style.display = "none";
+  document.getElementById("clear-button").style.display = "none";
+
+  const formContainer = document.getElementById("payment-form-container");
+  formContainer.style.display = "block";
+  formContainer.innerHTML = `
+    <h2>Finaliser votre commande</h2>
+    <form id="email-form">
+      <label for="customer-email">Adresse e-mail :</label><br>
+      <input type="email" id="customer-email" name="email" required style="width: 100%; max-width: 300px; padding: 8px; margin: 10px 0;">
+      <div style="margin-top: 15px;">
+        <button type="submit" style="background: #0070ba; color: white; padding: 10px 16px; border: none; border-radius: 4px; cursor: pointer;">Payer</button>
+      </div>
+    </form>
+    <p id="payment-message" style="margin-top: 15px;"></p>
+  `;
+
+  document.getElementById("email-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const email = document.getElementById("customer-email").value;
+    handlePaymentSubmission(email);
+  });
+}
+
+function handlePaymentSubmission(email) {
+  localStorage.setItem("customerEmail", email);
+  
+  document.getElementById("email-form").style.display = "none";
+  const messageEl = document.getElementById("payment-message");
+  messageEl.textContent = `✓ Une facture et un lien de paiement ont été envoyés à ${email}. Merci !`;
+  messageEl.style.color = "green";
+  messageEl.style.fontWeight = "bold";
+  
+  // Vider le panier
+  clearCart();
+  
+  // Afficher la question post-paiement après 2 secondes
+  setTimeout(function() {
+    showPostPaymentQuestion();
+  }, 2000);
+}
+
+// Valider la commande (ancienne fonction, garde pour déboguer si nécessaire)
+function checkout() {
+  showPaymentForm();
 }
 
 function showPostPaymentQuestion() {
@@ -125,19 +166,5 @@ function showPostPaymentQuestion() {
   });
 }
 
-function handlePaymentReturn() {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("payment") === "success") {
-    clearCart();
-    showPostPaymentQuestion();
-    return true;
-  }
-  return false;
-}
-
 // Afficher le panier au chargement
-document.addEventListener('DOMContentLoaded', function() {
-  if (!handlePaymentReturn()) {
-    displayCart();
-  }
-});
+document.addEventListener('DOMContentLoaded', displayCart);
