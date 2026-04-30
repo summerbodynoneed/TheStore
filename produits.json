@@ -98,7 +98,7 @@
 
   "categories": [
     { "id": "clothes",   "label": "clothes" },
-    { "id": "footwear", "label": "footwear" },
+    { "id": "footwear", "label": "footwear" }
   ],
 
   "meta": {
