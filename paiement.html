@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaBoutique.com — Paiement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    🔒 Paiement 100% sécurisé — Vos données bancaires ne nous parviennent jamais &nbsp;★&nbsp; Merci pour votre confiance &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="produits.html">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <!-- Étapes de commande -->
+    <div class="panel" style="margin-bottom:8px;">
+      <div class="panel-body" style="padding:8px;">
+        <div style="display:flex; align-items:center; gap:4px; font-size:11px; font-weight:bold;">
+          <span style="background:green; color:#fff; padding:2px 8px;">① Panier</span>
+          <span style="color:#888;">▶</span>
+          <span style="background:green; color:#fff; padding:2px 8px;">② Questionnaire</span>
+          <span style="color:#888;">▶</span>
+          <span style="background:var(--accent); color:#fff; padding:2px 8px;">③ Paiement PayPal</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+
+      <!-- Récapitulatif commande -->
+      <div class="panel">
+        <div class="panel-title">📋 Récapitulatif de votre commande</div>
+        <div class="panel-body">
+
+          <table id="recap-table" class="data-table" style="margin-bottom:10px;">
+            <thead>
+              <tr>
+                <th>Produit</th>
+                <th>Taille</th>
+                <th>Qté</th>
+                <th>Prix</th>
+              </tr>
+            </thead>
+            <tbody id="recap-tbody">
+              <!-- Rempli dynamiquement -->
+            </tbody>
+          </table>
+
+          <hr class="separator">
+
+          <table style="width:100%; font-size:12px;">
+            <tr>
+              <td>Sous-total :</td>
+              <td style="text-align:right; color:var(--price); font-weight:bold;" id="recap-sous-total">—</td>
+            </tr>
+            <tr>
+              <td>Livraison :</td>
+              <td style="text-align:right; color:var(--price); font-weight:bold;" id="recap-livraison">—</td>
+            </tr>
+            <tr style="border-top:2px solid var(--border-dark);">
+              <td style="font-weight:bold; font-size:13px; padding-top:6px;">TOTAL :</td>
+              <td style="text-align:right; color:var(--price); font-weight:bold; font-size:16px; padding-top:6px;" id="recap-total">—</td>
+            </tr>
+          </table>
+
+          <hr class="separator">
+
+          <div style="font-size:11px; color:#555; line-height:1.9;">
+            🚚 Livraison sous 3 à 5 jours ouvrés<br>
+            🔄 Retours gratuits sous 30 jours<br>
+            📧 Confirmation par e-mail après paiement
+          </div>
+
+          <div style="margin-top:10px;">
+            <a href="panier.html" class="btn btn-small">← Modifier le panier</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Zone paiement PayPal -->
+      <div class="panel">
+        <div class="panel-title">💳 Paiement sécurisé</div>
+        <div class="panel-body" style="text-align:center;">
+
+          <div class="msg-box msg-info" style="margin-bottom:12px; text-align:left;">
+            <span class="msg-box-icon">🔒</span>
+            <span style="font-size:11px;">
+              Vous allez être redirigé vers <strong>PayPal</strong> pour finaliser votre paiement.
+              Vos coordonnées bancaires ne nous sont jamais communiquées.
+            </span>
+          </div>
+
+          <!-- Bouton PayPal injecté ici par paypal.js -->
+          <div id="paypal-button-container" style="min-height:50px; margin:10px 0;">
+            <div style="font-size:12px; color:#888; font-style:italic; padding:10px;">
+              Chargement du bouton PayPal...
+            </div>
+          </div>
+
+          <!-- Logos de confiance -->
+          <hr class="separator" style="margin:12px 0;">
+          <div style="font-size:10px; color:#888; line-height:1.8;">
+            <div style="font-size:16px; margin-bottom:4px;">🔒 🛡️ ✅</div>
+            Paiement crypté SSL &nbsp;|&nbsp; Données sécurisées<br>
+            <span style="color:#003087; font-weight:bold;">Pay</span><span style="color:#009cde; font-weight:bold;">Pal</span>
+            — La référence du paiement en ligne depuis 1998
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+  </div>
+
+  <script src="panier.js"></script>
+  <script src="paypal.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items   = obtenirPanier();
+    const tbody   = document.getElementById('recap-tbody');
+
+    if (!items || items.length === 0) {
+      window.location.href = 'panier.html';
+      return;
+    }
+
+    // Remplir le récapitulatif
+    let sousTotal = 0;
+    items.forEach(function (item) {
+      const ligne = item.prix * item.quantite;
+      sousTotal  += ligne;
+      const tr    = document.createElement('tr');
+      tr.innerHTML =
+        '<td style="font-size:12px;">' + item.nom + '</td>' +
+        '<td style="text-align:center; font-size:12px;">' + item.taille + '</td>' +
+        '<td style="text-align:center; font-size:12px;">' + item.quantite + '</td>' +
+        '<td style="text-align:right; font-size:12px; color:var(--price); font-weight:bold;">'
+          + ligne.toFixed(2).replace('.', ',') + ' €</td>';
+      tbody.appendChild(tr);
+    });
+
+    const livraison = sousTotal >= 50 ? 0 : 4.90;
+    const total     = sousTotal + livraison;
+
+    document.getElementById('recap-sous-total').textContent =
+      sousTotal.toFixed(2).replace('.', ',') + ' €';
+    document.getElementById('recap-livraison').textContent =
+      livraison === 0 ? 'GRATUITE' : livraison.toFixed(2).replace('.', ',') + ' €';
+    document.getElementById('recap-total').textContent =
+      total.toFixed(2).replace('.', ',') + ' €';
+
+    if (livraison === 0) {
+      document.getElementById('recap-livraison').style.color = 'green';
+    }
+  });
+  </script>
+
+</body>
+</html>

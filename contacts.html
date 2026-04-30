@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaBoutique.com — Contacts & CGV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    ✉️ Une question ? Contactez-nous par e-mail — Réponse sous 24h &nbsp;★&nbsp; Suivez-nous sur Instagram pour les nouveautés &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="produits.html">📦 Produits</a>
+    <a href="contacts.html" class="active">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <!-- Deux colonnes -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+
+      <!-- ── Colonne gauche : coordonnées ─────────────────── -->
+      <div>
+        <div class="panel" style="margin-bottom:8px;">
+          <div class="panel-title">✉️ Nous Contacter</div>
+          <div class="panel-body">
+
+            <div class="page-title">Coordonnées</div>
+
+            <ul id="contacts-list">
+
+              <!-- Instagram -->
+              <li>
+                <span class="contact-icon">📷</span>
+                <div>
+                  <strong style="display:block; font-size:12px; margin-bottom:2px;">Instagram</strong>
+                  <a href="https://www.instagram.com/maboutique" target="_blank" rel="noopener noreferrer">
+                    @maboutique
+                  </a>
+                  <div style="font-size:10px; color:#666; margin-top:1px;">
+                    Suivez nos nouveautés et promotions
+                  </div>
+                </div>
+              </li>
+
+              <!-- Email -->
+              <li>
+                <span class="contact-icon">📧</span>
+                <div>
+                  <strong style="display:block; font-size:12px; margin-bottom:2px;">E-mail</strong>
+                  <a href="mailto:contact@maboutique.com">contact@maboutique.com</a>
+                  <div style="font-size:10px; color:#666; margin-top:1px;">
+                    Réponse garantie sous 24h ouvrées
+                  </div>
+                </div>
+              </li>
+
+              <!-- Conditions générales -->
+              <li>
+                <span class="contact-icon">📄</span>
+                <div>
+                  <strong style="display:block; font-size:12px; margin-bottom:2px;">Conditions Générales</strong>
+                  <a href="#cgv-section">→ Lire les Conditions Générales de Vente</a>
+                  <div style="font-size:10px; color:#666; margin-top:1px;">
+                    Consultez vos droits en tant qu'acheteur
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Horaires / infos -->
+        <div class="panel">
+          <div class="panel-title">🕐 Informations Pratiques</div>
+          <div class="panel-body">
+            <table class="data-table" style="font-size:12px;">
+              <tr>
+                <td style="font-weight:bold;">Support :</td>
+                <td>Lun – Ven, 9h – 18h</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold;">Livraison :</td>
+                <td>3 à 5 jours ouvrés</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold;">Livraison offerte :</td>
+                <td>Dès 50 € d'achat</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold;">Retours :</td>
+                <td>Gratuits sous 30 jours</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold;">Paiement :</td>
+                <td>PayPal (sécurisé)</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold;">Siège social :</td>
+                <td>Paris, France 🇫🇷</td>
+              </tr>
+            </table>
+
+            <div style="margin-top:10px; padding:6px; background:#fffff0; border:1px solid #cccc88; font-size:11px; color:#555;">
+              🔒 Toutes vos données personnelles sont traitées conformément au
+              <strong>RGPD</strong>. Nous ne vendons jamais vos informations à des tiers.
+            </div>
+          </div>
+        </div>
+      </div><!-- /colonne gauche -->
+
+      <!-- ── Colonne droite : réseaux + badge PayPal ──────── -->
+      <div>
+
+        <div class="panel" style="margin-bottom:8px;">
+          <div class="panel-title">📱 Suivez-nous</div>
+          <div class="panel-body" style="text-align:center;">
+
+            <!-- Encart Instagram style 2000s -->
+            <a href="https://www.instagram.com/maboutique" target="_blank" rel="noopener noreferrer"
+               style="display:block; padding:12px; background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+                      color:#fff; text-decoration:none; border:2px solid;
+                      border-color:#fff #888 #888 #fff; margin-bottom:10px;">
+              <div style="font-size:28px; margin-bottom:4px;">📷</div>
+              <div style="font-weight:bold; font-size:14px;">@maboutique</div>
+              <div style="font-size:11px; margin-top:4px; opacity:0.9;">
+                Cliquez pour nous suivre sur Instagram
+              </div>
+              <div style="font-size:10px; margin-top:2px; opacity:0.8;">
+                Nouveautés · Promotions · Coulisses
+              </div>
+            </a>
+
+            <!-- Badge PayPal vérification -->
+            <div style="padding:8px; background:#fff; border:2px solid;
+                        border-color:#aaa #fff #fff #aaa; text-align:center; font-size:11px; color:#555;">
+              <div style="font-size:20px; margin-bottom:4px;">🔒</div>
+              <strong>Paiement sécurisé</strong><br>
+              <span style="color:#003087; font-weight:bold; font-size:13px;">Pay<span style="color:#009cde;">Pal</span></span><br>
+              <span style="font-size:10px;">Vos données bancaires ne nous parviennent jamais</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FAQ rapide -->
+        <div class="panel">
+          <div class="panel-title">❓ FAQ — Questions fréquentes</div>
+          <div class="panel-body" style="font-size:12px;">
+
+            <div style="margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #ccc;">
+              <strong>Puis-je retourner un article ?</strong><br>
+              Oui, les retours sont gratuits sous 30 jours après réception, sans justification nécessaire.
+            </div>
+
+            <div style="margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #ccc;">
+              <strong>Comment suivre ma commande ?</strong><br>
+              Un e-mail de confirmation avec numéro de suivi vous est envoyé dès l'expédition.
+            </div>
+
+            <div style="margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #ccc;">
+              <strong>Les tailles sont-elles standard ?</strong><br>
+              Oui, nous suivons les tailles européennes standard. Un guide des tailles est disponible sur chaque fiche produit.
+            </div>
+
+            <div>
+              <strong>Puis-je modifier ma commande ?</strong><br>
+              Contactez-nous dans les 2h après la commande à <a href="mailto:contact@maboutique.com">contact@maboutique.com</a>.
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /colonne droite -->
+    </div><!-- /grid -->
+
+    <!-- ── CONDITIONS GÉNÉRALES DE VENTE ─────────────────── -->
+    <div class="panel" id="cgv-section">
+      <div class="panel-title">
+        <span>📄 Conditions Générales de Vente (CGV)</span>
+        <span style="font-size:10px; font-weight:normal;">Version en vigueur : Janvier 2024</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="page-title">Conditions Générales de Vente</div>
+
+        <div id="cgv-box">
+          <p><strong>ARTICLE 1 — OBJET ET CHAMP D'APPLICATION</strong><br>
+          Les présentes Conditions Générales de Vente (ci-après « CGV ») s'appliquent à toutes les ventes conclues entre MaBoutique.com (ci-après « le Vendeur ») et tout acheteur non professionnel (ci-après « l'Acheteur ») via le site internet maboutique.com.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 2 — PRODUITS</strong><br>
+          Les produits proposés sont ceux figurant dans le catalogue publié sur le site. Chaque produit est présenté avec une description et un prix TTC. Le Vendeur se réserve le droit de modifier l'assortiment de produits à tout moment.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 3 — PRIX</strong><br>
+          Les prix sont indiqués en euros TTC (toutes taxes comprises). Les frais de livraison sont indiqués avant validation de la commande. La livraison est offerte pour toute commande supérieure ou égale à 50 €.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 4 — COMMANDE ET PAIEMENT</strong><br>
+          Le paiement s'effectue exclusivement via PayPal. La commande est validée dès réception du paiement. Le Vendeur se réserve le droit d'annuler une commande en cas de suspicion de fraude.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 5 — LIVRAISON</strong><br>
+          Les commandes sont expédiées sous 1 à 2 jours ouvrés. Le délai de livraison est de 3 à 5 jours ouvrés en France métropolitaine. L'Acheteur reçoit un e-mail de confirmation avec numéro de suivi dès l'expédition.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 6 — DROIT DE RÉTRACTATION</strong><br>
+          Conformément à l'article L.221-18 du Code de la Consommation, l'Acheteur dispose d'un délai de 14 jours à compter de la réception du bien pour exercer son droit de rétractation, sans avoir à justifier de motifs ni à payer de pénalités. Le retour des articles est gratuit.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 7 — GARANTIES</strong><br>
+          Tous les produits bénéficient de la garantie légale de conformité (2 ans) et de la garantie contre les vices cachés, conformément aux articles L.217-4 et suivants du Code de la Consommation.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 8 — DONNÉES PERSONNELLES</strong><br>
+          Les données collectées (e-mail, historique de commandes) sont utilisées uniquement pour le traitement des commandes et l'amélioration de nos services. Elles ne sont en aucun cas cédées à des tiers. Conformément au RGPD, l'Acheteur dispose d'un droit d'accès, de rectification et de suppression de ses données en écrivant à contact@maboutique.com.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 9 — RÈGLEMENT DES LITIGES</strong><br>
+          En cas de litige, l'Acheteur peut contacter le service client par e-mail à contact@maboutique.com. En l'absence de résolution amiable, l'Acheteur peut saisir le médiateur de la consommation compétent. Les tribunaux français sont seuls compétents.</p>
+
+          <p style="margin-top:8px;"><strong>ARTICLE 10 — LOI APPLICABLE</strong><br>
+          Les présentes CGV sont soumises au droit français. Toute clause non valide n'entraîne pas la nullité des autres clauses.</p>
+        </div>
+
+        <div style="font-size:10px; color:#888; margin-top:6px; text-align:right;">
+          Document généré le 01/01/2024 — MaBoutique.com, Paris, France
+        </div>
+
+      </div>
+    </div><!-- /.panel CGV -->
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+    <br>
+    <span style="font-size:10px; color:#888;">
+      Site optimisé pour Internet Explorer 6.0 — Résolution 800×600
+    </span>
+  </div>
+
+  <script src="panier.js"></script>
+
+</body>
+</html>

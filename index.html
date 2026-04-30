@@ -3,48 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutique en ligne - Années 2000</title>
+  <meta name="description" content="Bienvenue sur notre boutique en ligne">
+  <title>MaBoutique.com — Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <header class="header-container">
-    <img src="..." alt="Logo">
-    <h1>Boutique en ligne</h1>
-    <a class="cart-link" href="cart.html" title="Voir le panier">
-      🛒
-      <span id="cart-badge" style="display:none;">0</span>
+  <!-- ══ MARQUEE retro ══════════════════════════════════════ -->
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    🛒 Bienvenue sur MaBoutique.com ! &nbsp;★&nbsp; Livraison gratuite dès 50€ &nbsp;★&nbsp; Nouveaux produits disponibles &nbsp;★&nbsp; Paiement sécurisé via PayPal &nbsp;★&nbsp; Satisfait ou remboursé sous 30 jours &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
     </a>
-  </header>
+  </div>
 
-  <nav class="center-text">
-    <a href="index.html">Accueil</a> | 
-    <a href="products.html">Produits</a> | 
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html" class="active">🏠 Accueil</a>
+    <a href="product.html">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
 
-  <h2>Nos produits</h2>
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
 
-  <div class="carousel-container">
-    <button class="carousel-btn carousel-prev" onclick="prevSlide()">❮</button>
-    
-    <div class="carousel">
-      <div class="carousel-inner" id="carousel-inner">
-        <!-- Les produits vont s'afficher ici dynamiquement -->
+    <!-- Slideshow produits phares -->
+    <div class="panel">
+      <div class="panel-title">
+        <span>⭐ Produits Phares</span>
+        <span style="font-size:10px; font-weight:normal;">Mise à jour : Automne 2024</span>
       </div>
-    </div>
+      <div class="panel-body" style="padding:0;">
 
-    <button class="carousel-btn carousel-next" onclick="nextSlide()">❯</button>
+        <div id="slideshow">
+          <!-- Slide 1 -->
+          <div class="slide active" id="slide-0">
+            <img src="images/produit1.jpg" alt="Veste Classique" onerror="this.style.background='#336699'; this.style.height='280px'; this.removeAttribute('src');">
+            <div class="slide-caption">
+              <h3>🧥 Veste Classique Premium</h3>
+              <p>Coupe intemporelle, tissu haute qualité — <strong style="color:#ffdd88;">49,90 €</strong> &nbsp;
+                <a href="produit-detail.html?id=1" style="color:#aaccff; font-size:11px;">→ Voir le produit</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide" id="slide-1">
+            <img src="images/produit2.jpg" alt="Sac Cuir" onerror="this.style.background='#663300'; this.style.height='280px'; this.removeAttribute('src');">
+            <div class="slide-caption">
+              <h3>👜 Sac en Cuir Véritable</h3>
+              <p>Artisanat français, plusieurs coloris — <strong style="color:#ffdd88;">79,90 €</strong> &nbsp;
+                <a href="produit-detail.html?id=2" style="color:#aaccff; font-size:11px;">→ Voir le produit</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide" id="slide-2">
+            <img src="images/produit3.jpg" alt="Montre Vintage" onerror="this.style.background='#222222'; this.style.height='280px'; this.removeAttribute('src');">
+            <div class="slide-caption">
+              <h3>⌚ Montre Style Vintage</h3>
+              <p>Design années 70, bracelet cuir — <strong style="color:#ffdd88;">129,00 €</strong> &nbsp;
+                <a href="produit-detail.html?id=3" style="color:#aaccff; font-size:11px;">→ Voir le produit</a>
+              </p>
+            </div>
+          </div>
+        </div><!-- /#slideshow -->
+
+        <div id="slideshow-controls">
+          <button class="btn btn-small slide-btn" onclick="prevSlide()">◀ Préc.</button>
+          <span class="slide-dot active" onclick="goToSlide(0)"></span>
+          <span class="slide-dot"        onclick="goToSlide(1)"></span>
+          <span class="slide-dot"        onclick="goToSlide(2)"></span>
+          <button class="btn btn-small slide-btn" onclick="nextSlide()">Suiv. ▶</button>
+        </div>
+
+      </div>
+    </div><!-- /.panel -->
+
+    <!-- Deux colonnes : bienvenue + infos -->
+    <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+
+      <!-- Texte de bienvenue -->
+      <div class="panel">
+        <div class="panel-title">📋 Bienvenue sur MaBoutique.com</div>
+        <div class="panel-body">
+          <div id="welcome-text">
+            <h2>Votre boutique de confiance depuis 2001</h2>
+            <p>
+              Découvrez notre sélection de produits soigneusement choisis pour leur qualité et leur style.
+              Nous proposons des articles mode, accessoires et bien plus encore, livrés directement chez vous.
+            </p>
+            <p style="margin-top:8px;">
+              Paiement <strong>100% sécurisé</strong> via PayPal. Livraison sous 3 à 5 jours ouvrés.
+              Retours acceptés sous 30 jours.
+            </p>
+            <p style="margin-top:8px;">
+              <a href="product.html">→ Voir tous nos produits</a>
+            </p>
+            <div style="margin-top:10px;">
+              <span style="font-size:11px; font-weight:bold; color:#555;">Visiteurs depuis l'ouverture :</span><br>
+              <span class="visitor-counter">001 337 042</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Encart infos rapides -->
+      <div>
+        <div class="panel" style="margin-bottom:8px;">
+          <div class="panel-title">ℹ️ Informations</div>
+          <div class="panel-body" style="font-size:11px; line-height:2;">
+            <div>✅ Paiement sécurisé</div>
+            <div>🚚 Livraison rapide</div>
+            <div>🔄 Retours 30 jours</div>
+            <div>📞 Support par e-mail</div>
+            <div>🇫🇷 Boutique française</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">🔥 En ce moment</div>
+          <div class="panel-body" style="font-size:11px; line-height:1.8;">
+            <div>
+              <span class="badge badge-promo">PROMO</span>
+              <a href="produit-detail.html?id=4" style="font-size:11px;"> Écharpe Laine</a>
+              <br><span style="color:#cc0000; font-weight:bold;">19,90 €</span>
+              <span style="text-decoration:line-through; color:#888; font-size:10px;">29,90 €</span>
+            </div>
+            <hr class="separator">
+            <div>
+              <span class="badge badge-new">NOUVEAU</span>
+              <a href="produit-detail.html?id=5" style="font-size:11px;"> Ceinture Cuir</a>
+              <br><span style="color:#cc0000; font-weight:bold;">34,90 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+    <br>
+    <span style="font-size:10px; color:#888;">
+      Site optimisé pour Internet Explorer 6.0 — Résolution 800×600
+    </span>
   </div>
 
-  <div class="carousel-dots" id="carousel-dots">
-    <!-- Les points de pagination vont s'afficher ici -->
-  </div>
-</div>
-
-<script src="product.js"></script>
-<script src="carousel.js"></script>
+  <script src="panier.js"></script>
+  <script src="slideshow.js"></script>
 
 </body>
 </html>

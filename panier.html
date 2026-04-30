@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaBoutique.com — Mon Panier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    💳 Paiement 100% sécurisé via PayPal &nbsp;★&nbsp; Livraison gratuite dès 50€ &nbsp;★&nbsp; Retours gratuits sous 30 jours &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="produits.html">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <div class="panel">
+      <div class="panel-title">
+        <span>🛒 Mon Panier</span>
+        <span id="cart-item-count-label" style="font-size:10px; font-weight:normal;">0 article(s)</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="page-title">Récapitulatif de votre commande</div>
+
+        <!-- Tableau panier -->
+        <div id="cart-content">
+
+          <!-- État : panier vide -->
+          <div id="cart-empty" class="cart-empty">
+            <div style="font-size:40px; margin-bottom:10px;">🛒</div>
+            <p>Votre panier est vide.</p>
+            <a href="produits.html" class="btn btn-primary" style="margin-top:10px; display:inline-block;">
+              → Voir nos produits
+            </a>
+          </div>
+
+          <!-- État : panier avec articles -->
+          <div id="cart-full" style="display:none;">
+            <table id="cart-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;">Photo</th>
+                  <th>Produit</th>
+                  <th style="width:80px;">Taille</th>
+                  <th style="width:80px;">Prix unit.</th>
+                  <th style="width:70px;">Qté</th>
+                  <th style="width:90px;">Total</th>
+                  <th style="width:50px;">Retirer</th>
+                </tr>
+              </thead>
+              <tbody id="cart-tbody">
+                <!-- Rempli dynamiquement -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4"></td>
+                  <td colspan="2" style="padding:6px 8px;">
+                    <div style="font-size:12px; color:#555;">Sous-total :</div>
+                    <div id="cart-subtotal" style="font-size:14px; font-weight:bold; color:var(--price);">0,00 €</div>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr style="background-color:var(--bg-light);">
+                  <td colspan="4" style="padding:6px 8px; font-size:12px; color:#555;">
+                    🚚 Frais de livraison :
+                    <span id="shipping-msg" style="color:green; font-weight:bold;"></span>
+                  </td>
+                  <td colspan="2" style="padding:6px 8px;">
+                    <div id="cart-shipping" style="font-size:14px; font-weight:bold; color:var(--price);">0,00 €</div>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr id="cart-total-row">
+                  <td colspan="4" style="padding:8px; font-size:13px; font-weight:bold;">TOTAL TTC :</td>
+                  <td colspan="2" style="padding:8px;">
+                    <div id="cart-grand-total" style="font-size:18px; font-weight:bold; color:var(--price);">0,00 €</div>
+                  </td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <hr class="separator" style="margin:12px 0;">
+
+            <!-- Actions panier -->
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <div>
+                <a href="produits.html" class="btn">← Continuer mes achats</a>
+                <button class="btn btn-danger btn-small" onclick="viderPanier()" style="margin-left:6px;">
+                  🗑️ Vider le panier
+                </button>
+              </div>
+              <div style="text-align:right;">
+                <button class="btn btn-paypal" onclick="allerQuestionnaire()">
+                  Passer commande &nbsp;▶
+                </button>
+                <div style="font-size:10px; color:#888; margin-top:4px;">
+                  Vous serez redirigé vers PayPal après quelques questions
+                </div>
+              </div>
+            </div>
+
+            <!-- Infos rassurantes -->
+            <div class="msg-box msg-info" style="margin-top:12px;">
+              <span class="msg-box-icon">🔒</span>
+              <span>
+                Votre paiement est <strong>100% sécurisé</strong> via PayPal.
+                Nous ne stockons jamais vos données bancaires.
+                Avant le paiement, un court questionnaire (facultatif) vous sera proposé.
+              </span>
+            </div>
+
+          </div><!-- /#cart-full -->
+
+        </div><!-- /#cart-content -->
+
+      </div>
+    </div><!-- /.panel -->
+
+    <!-- Produits suggérés -->
+    <div class="panel">
+      <div class="panel-title">💡 Vous pourriez aimer</div>
+      <div class="panel-body">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;" id="suggestions">
+          <div class="product-card">
+            <a href="produit-detail.html?id=1">
+              <img class="product-card-img" src="images/produit1.jpg" alt="Veste Classique"
+                   onerror="this.style.background='#336699'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
+            </a>
+            <div class="product-card-body">
+              <a href="produit-detail.html?id=1" class="product-card-title" style="font-size:12px;">Veste Classique Premium</a>
+              <div class="product-card-price" style="font-size:13px;">49,90 €</div>
+              <a href="produit-detail.html?id=1" class="btn btn-small w100">Voir →</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="produit-detail.html?id=2">
+              <img class="product-card-img" src="images/produit2.jpg" alt="Sac en Cuir"
+                   onerror="this.style.background='#663300'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
+            </a>
+            <div class="product-card-body">
+              <a href="produit-detail.html?id=2" class="product-card-title" style="font-size:12px;">Sac en Cuir Véritable</a>
+              <div class="product-card-price" style="font-size:13px;">79,90 €</div>
+              <a href="produit-detail.html?id=2" class="btn btn-small w100">Voir →</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="produit-detail.html?id=4">
+              <img class="product-card-img" src="images/produit4.jpg" alt="Écharpe Laine"
+                   onerror="this.style.background='#8B4513'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
+            </a>
+            <div class="product-card-body">
+              <span class="badge badge-promo">PROMO</span>
+              <a href="produit-detail.html?id=4" class="product-card-title" style="font-size:12px;">Écharpe en Laine Douce</a>
+              <div class="product-card-price" style="font-size:13px;"><span class="old-price">29,90 €</span>19,90 €</div>
+              <a href="produit-detail.html?id=4" class="btn btn-small w100">Voir →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+  </div>
+
+  <script src="panier.js"></script>
+  <script>
+  // ── Affichage du panier ──────────────────────────────────────────────────
+  function afficherPanier() {
+    const items = obtenirPanier(); // fonction de panier.js
+
+    const FRAIS_LIVRAISON  = 4.90;
+    const SEUIL_GRATUIT    = 50.00;
+
+    const emptyDiv = document.getElementById('cart-empty');
+    const fullDiv  = document.getElementById('cart-full');
+    const tbody    = document.getElementById('cart-tbody');
+
+    if (!items || items.length === 0) {
+      emptyDiv.style.display = 'block';
+      fullDiv.style.display  = 'none';
+      document.getElementById('cart-item-count-label').textContent = '0 article(s)';
+      return;
+    }
+
+    emptyDiv.style.display = 'none';
+    fullDiv.style.display  = 'block';
+
+    // Remplir le tableau
+    tbody.innerHTML = '';
+    let sousTotal = 0;
+
+    items.forEach((item, index) => {
+      const ligneTotal = item.prix * item.quantite;
+      sousTotal += ligneTotal;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>
+          <img src="${item.image || 'images/placeholder.jpg'}" alt="${item.nom}"
+               style="width:36px; height:36px; object-fit:cover; border:1px solid #ccc;"
+               onerror="this.style.background='#aaa'; this.removeAttribute('src');">
+        </td>
+        <td>
+          <a href="produit-detail.html?id=${item.id}" style="font-weight:bold; font-size:12px;">${item.nom}</a>
+        </td>
+        <td style="text-align:center;">${item.taille}</td>
+        <td class="item-price">${item.prix.toFixed(2).replace('.', ',')} €</td>
+        <td style="text-align:center;">
+          <input type="number" value="${item.quantite}" min="1" max="10" style="width:45px;"
+                 onchange="mettreAJourQuantite(${index}, this.value)">
+        </td>
+        <td class="item-total">${ligneTotal.toFixed(2).replace('.', ',')} €</td>
+        <td style="text-align:center;">
+          <button class="btn btn-danger btn-small" onclick="supprimerItem(${index})">✕</button>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+
+    // Totaux
+    const livraison = sousTotal >= SEUIL_GRATUIT ? 0 : FRAIS_LIVRAISON;
+    const total     = sousTotal + livraison;
+
+    document.getElementById('cart-item-count-label').textContent = items.length + ' article(s)';
+    document.getElementById('cart-subtotal').textContent   = sousTotal.toFixed(2).replace('.', ',') + ' €';
+    document.getElementById('cart-grand-total').textContent = total.toFixed(2).replace('.', ',') + ' €';
+
+    if (livraison === 0) {
+      document.getElementById('cart-shipping').textContent = 'GRATUITE';
+      document.getElementById('cart-shipping').style.color = 'green';
+      document.getElementById('shipping-msg').textContent  = '(Livraison offerte !)';
+    } else {
+      document.getElementById('cart-shipping').textContent = livraison.toFixed(2).replace('.', ',') + ' €';
+      document.getElementById('shipping-msg').textContent  =
+        'Encore ' + (SEUIL_GRATUIT - sousTotal).toFixed(2).replace('.', ',') + '€ pour la livraison gratuite';
+    }
+  }
+
+  function allerQuestionnaire() {
+    const items = obtenirPanier();
+    if (!items || items.length === 0) {
+      alert('Votre panier est vide !');
+      return;
+    }
+    window.location.href = 'questionnaire.html';
+  }
+
+  // Initialisation
+  afficherPanier();
+  </script>
+
+</body>
+</html>

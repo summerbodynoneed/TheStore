@@ -1,0 +1,63 @@
+{
+  "_commentaire": "Ce fichier est un exemple de la structure des réponses stockées. En production, les réponses sont écrites dans localStorage par questionnaire.js sous la clé 'maboutique_reponses'. Pour les récupérer côté serveur, il faudra un endpoint backend (PHP, Node.js...) qui reçoit les données via fetch/POST et les écrit ici ou en base de données.",
+
+  "_structure_attendue": {
+    "horodatage":        "2024-01-15T14:32:00.000Z",
+    "email":             "client@exemple.com",
+    "q1_decouverte":     "moteur | reseau | bouche | autre",
+    "q2_premier_achat":  "oui | non_1 | non_plus",
+    "q3_experience":     "excellent | bien | moyen | a_ameliorer",
+    "q4_type_produit":   "vetements | accessoires | bijoux | tout",
+    "panier_total":      49.90,
+    "panier_articles": [
+      {
+        "id":     1,
+        "nom":    "Veste Classique Premium",
+        "taille": "M",
+        "qty":    1
+      }
+    ]
+  },
+
+  "reponses": [
+    {
+      "horodatage":        "2024-01-15T10:12:44.000Z",
+      "email":             "sophie.martin@email.fr",
+      "q1_decouverte":     "reseau",
+      "q2_premier_achat":  "oui",
+      "q3_experience":     "excellent",
+      "q4_type_produit":   "accessoires",
+      "panier_total":      79.90,
+      "panier_articles": [
+        { "id": 2, "nom": "Sac en Cuir Véritable", "taille": "Taille unique", "qty": 1 }
+      ]
+    },
+    {
+      "horodatage":        "2024-01-16T14:05:11.000Z",
+      "email":             "paul.durand@mail.com",
+      "q1_decouverte":     "moteur",
+      "q2_premier_achat":  "non_1",
+      "q3_experience":     "bien",
+      "q4_type_produit":   "vetements",
+      "panier_total":      84.80,
+      "panier_articles": [
+        { "id": 1, "nom": "Veste Classique Premium", "taille": "L",           "qty": 1 },
+        { "id": 4, "nom": "Écharpe en Laine Douce",  "taille": "Taille unique","qty": 1 }
+      ]
+    },
+    {
+      "horodatage":        "2024-01-17T09:33:27.000Z",
+      "email":             "marie.leblanc@webmail.fr",
+      "q1_decouverte":     "bouche",
+      "q2_premier_achat":  "non_plus",
+      "q3_experience":     "excellent",
+      "q4_type_produit":   "bijoux",
+      "panier_total":      129.00,
+      "panier_articles": [
+        { "id": 3, "nom": "Montre Style Vintage", "taille": "Taille unique", "qty": 1 }
+      ]
+    }
+  ],
+
+  "_note_backend": "Pour envoyer les réponses vers ce fichier ou une base de données, ajoutez dans questionnaire.js un appel fetch('/api/reponses', { method: 'POST', body: JSON.stringify(reponses) }) juste avant la redirection PayPal. Un petit serveur PHP ou Node.js suffit pour recevoir et stocker ces données."
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaBoutique.com — Questionnaire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    ✏️ Ce questionnaire est anonyme et facultatif — il nous aide à améliorer notre boutique &nbsp;★&nbsp; Merci de votre participation &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="produits.html">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <!-- Étapes de commande -->
+    <div class="panel" style="margin-bottom:8px;">
+      <div class="panel-body" style="padding:8px;">
+        <div style="display:flex; align-items:center; gap:4px; font-size:11px; font-weight:bold;">
+          <span style="background:green; color:#fff; padding:2px 8px;">① Panier</span>
+          <span style="color:#888;">▶</span>
+          <span style="background:var(--accent); color:#fff; padding:2px 8px;">② Questionnaire</span>
+          <span style="color:#888;">▶</span>
+          <span style="background:var(--btn-face); color:#666; padding:2px 8px; border:1px solid #aaa;">③ Paiement PayPal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        <span>✏️ Questionnaire — Aidez-nous à vous servir mieux</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="msg-box msg-info" style="margin-bottom:12px;">
+          <span class="msg-box-icon">ℹ️</span>
+          <span>
+            Ce questionnaire est <strong>entièrement facultatif</strong> et ne retarde pas votre commande.
+            Vos réponses nous aident à améliorer notre boutique. Renseignez votre e-mail pour être informé de nos offres.
+          </span>
+        </div>
+
+        <!-- Barre de progression -->
+        <div style="margin-bottom:12px;">
+          <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
+            <span>Progression</span>
+            <span id="progress-text">0 / 4 réponses</span>
+          </div>
+          <div id="progress-bar-wrap">
+            <div id="progress-bar"></div>
+            <div id="progress-label">0%</div>
+          </div>
+        </div>
+
+        <!-- ── FORMULAIRE ─────────────────────────────────────────── -->
+        <div id="questionnaire-form">
+
+          <!-- Email -->
+          <div class="question-block">
+            <div class="q-number">Votre e-mail (obligatoire)</div>
+            <div class="q-text">📧 Quelle est votre adresse e-mail ?</div>
+            <input type="email" id="q-email" class="q-email-field" placeholder="votre@email.com"
+                   style="width:100%; max-width:360px;"
+                   oninput="mettreAJourProgression()">
+            <div style="font-size:10px; color:#666; margin-top:4px;">
+              * Uniquement utilisée pour vous informer de nos offres. Non partagée à des tiers.
+            </div>
+          </div>
+
+          <!-- Question 1 -->
+          <div class="question-block">
+            <div class="q-number">Question 1 / 4</div>
+            <div class="q-text">🔍 Comment avez-vous découvert notre boutique ?</div>
+            <div class="q-options">
+              <label><input type="radio" name="q1" value="moteur" onchange="mettreAJourProgression()"> Moteur de recherche (Google, Bing…)</label>
+              <label><input type="radio" name="q1" value="reseau" onchange="mettreAJourProgression()"> Réseaux sociaux (Instagram, Facebook…)</label>
+              <label><input type="radio" name="q1" value="bouche" onchange="mettreAJourProgression()"> Bouche-à-oreille / recommandation</label>
+              <label><input type="radio" name="q1" value="autre"  onchange="mettreAJourProgression()"> Autre</label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question-block">
+            <div class="q-number">Question 2 / 4</div>
+            <div class="q-text">🛍️ Est-ce votre premier achat sur notre boutique ?</div>
+            <div class="q-options">
+              <label><input type="radio" name="q2" value="oui"        onchange="mettreAJourProgression()"> Oui, c'est ma première commande</label>
+              <label><input type="radio" name="q2" value="non_1"      onchange="mettreAJourProgression()"> Non, j'ai déjà commandé une fois</label>
+              <label><input type="radio" name="q2" value="non_plus"   onchange="mettreAJourProgression()"> Non, je commande régulièrement</label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question-block">
+            <div class="q-number">Question 3 / 4</div>
+            <div class="q-text">⭐ Comment évaluez-vous votre expérience sur notre site aujourd'hui ?</div>
+            <div class="q-options">
+              <label><input type="radio" name="q3" value="excellent"  onchange="mettreAJourProgression()"> ⭐⭐⭐⭐⭐ Excellent</label>
+              <label><input type="radio" name="q3" value="bien"       onchange="mettreAJourProgression()"> ⭐⭐⭐⭐ Bien</label>
+              <label><input type="radio" name="q3" value="moyen"      onchange="mettreAJourProgression()"> ⭐⭐⭐ Moyen</label>
+              <label><input type="radio" name="q3" value="a_ameliorer" onchange="mettreAJourProgression()"> ⭐⭐ À améliorer</label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question-block">
+            <div class="q-number">Question 4 / 4</div>
+            <div class="q-text">📦 Quel type de produit recherchez-vous en priorité ?</div>
+            <div class="q-options">
+              <label><input type="radio" name="q4" value="vetements"    onchange="mettreAJourProgression()"> Vêtements</label>
+              <label><input type="radio" name="q4" value="accessoires"  onchange="mettreAJourProgression()"> Accessoires (sacs, ceintures…)</label>
+              <label><input type="radio" name="q4" value="bijoux"       onchange="mettreAJourProgression()"> Bijoux et montres</label>
+              <label><input type="radio" name="q4" value="tout"         onchange="mettreAJourProgression()"> Un peu de tout !</label>
+            </div>
+          </div>
+
+          <!-- Boutons d'action -->
+          <hr class="separator">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:8px;">
+            <div>
+              <a href="panier.html" class="btn">← Retour au panier</a>
+              <button class="btn" onclick="passerSansPondre()" style="margin-left:6px; font-size:11px; color:#666;">
+                Passer sans répondre →
+              </button>
+            </div>
+            <div style="text-align:right;">
+              <button class="btn btn-paypal" onclick="validerEtPayer()">
+                💳 Valider et payer via PayPal ▶
+              </button>
+              <div style="font-size:10px; color:#888; margin-top:4px;">
+                Vos réponses sont enregistrées avant la redirection
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#questionnaire-form -->
+
+        <!-- Message de confirmation (caché par défaut) -->
+        <div id="msg-sauvegarde" class="msg-box msg-success" style="display:none; margin-top:10px;">
+          <span class="msg-box-icon">✅</span>
+          <span>Merci pour vos réponses ! Redirection vers PayPal en cours...</span>
+        </div>
+
+        <!-- Message d'erreur email -->
+        <div id="msg-erreur-email" class="msg-box msg-error" style="display:none; margin-top:10px;">
+          <span class="msg-box-icon">⚠️</span>
+          <span>Veuillez renseigner une adresse e-mail valide.</span>
+        </div>
+
+      </div>
+    </div><!-- /.panel -->
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+  </div>
+
+  <script src="panier.js"></script>
+  <script src="questionnaire.js"></script>
+
+</body>
+</html>

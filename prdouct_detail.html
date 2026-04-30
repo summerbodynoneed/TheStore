@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaBoutique.com — Détail Produit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    🛒 Livraison gratuite dès 50€ &nbsp;★&nbsp; Paiement sécurisé via PayPal &nbsp;★&nbsp; Retours acceptés sous 30 jours &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
+    </a>
+  </div>
+
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="produits.html" class="active">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <!-- Fil d'Ariane -->
+    <div style="font-size:11px; margin-bottom:8px; color:#555;">
+      <a href="index.html">Accueil</a> &nbsp;»&nbsp;
+      <a href="produits.html">Produits</a> &nbsp;»&nbsp;
+      <span id="breadcrumb-name" style="color:#000;">Chargement...</span>
+    </div>
+
+    <!-- Panneau détail -->
+    <div class="panel">
+      <div class="panel-title">
+        <span id="panel-product-name">Détail Produit</span>
+        <span style="font-size:10px; font-weight:normal;">
+          <a href="produits.html" style="color:#aaccff;">← Retour aux produits</a>
+        </span>
+      </div>
+      <div class="panel-body">
+
+        <!-- Zone principale : photo + infos -->
+        <div id="product-detail">
+
+          <!-- Colonne gauche : image principale -->
+          <div>
+            <img id="product-main-img"
+                 src="images/produit1.jpg"
+                 alt="Photo produit"
+                 onerror="this.style.background='#336699'; this.style.height='320px'; this.removeAttribute('src');">
+
+            <!-- Message ajout panier -->
+            <div id="add-msg" style="display:none; margin-top:8px;" class="msg-box msg-success">
+              <span class="msg-box-icon">✅</span>
+              <span>Produit ajouté au panier !</span>
+            </div>
+          </div>
+
+          <!-- Colonne droite : infos + options achat -->
+          <div>
+            <h1 id="product-name" style="font-family:var(--font-main); font-size:20px; color:var(--header-start); margin-bottom:6px; border-bottom:1px solid var(--border-dark); padding-bottom:4px;">
+              Chargement...
+            </h1>
+
+            <div id="product-price" class="product-price" style="font-size:22px; font-weight:bold; color:var(--price); margin-bottom:6px; font-family:var(--font-main);">
+              — €
+            </div>
+
+            <div id="product-badges" style="margin-bottom:8px;"></div>
+
+            <div id="product-desc" style="font-size:12px; line-height:1.7; color:var(--text); margin-bottom:12px; border-top:1px dotted var(--border-dark); padding-top:8px;">
+              Chargement de la description...
+            </div>
+
+            <!-- Options : taille & quantité -->
+            <div class="buy-options">
+              <table>
+                <tr>
+                  <td><label for="select-taille">Taille :</label></td>
+                  <td>
+                    <select id="select-taille">
+                      <option value="">-- Choisir --</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="select-qty">Quantité :</label></td>
+                  <td>
+                    <input type="number" id="select-qty" value="1" min="1" max="10"
+                           style="width:60px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding-top:8px;">
+                    <button class="btn btn-primary" onclick="ajouterAuPanier()" style="width:100%; font-size:13px; padding:6px 12px;">
+                      🛒 Ajouter au panier
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Infos livraison -->
+            <div style="font-size:11px; color:#555; line-height:1.9; border-top:1px dotted var(--border-dark); padding-top:8px; margin-top:4px;">
+              🚚 <strong>Livraison</strong> : 3 à 5 jours ouvrés<br>
+              💳 <strong>Paiement</strong> : 100% sécurisé via PayPal<br>
+              🔄 <strong>Retours</strong> : Gratuits sous 30 jours<br>
+              📦 <strong>Stock</strong> : <span style="color:green; font-weight:bold;">Disponible</span>
+            </div>
+
+          </div>
+        </div><!-- /#product-detail -->
+
+        <!-- Galerie de photos -->
+        <hr class="separator">
+        <div class="panel-title" style="margin: 0 -10px 8px -10px;">📷 Galerie Photos</div>
+        <div id="product-gallery">
+          <!-- Générée dynamiquement par JS -->
+        </div>
+
+      </div>
+    </div><!-- /.panel -->
+
+    <!-- Produits similaires -->
+    <div class="panel">
+      <div class="panel-title">👁️ Vous pourriez aussi aimer</div>
+      <div class="panel-body">
+        <div id="similar-products" style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+          <!-- Généré dynamiquement -->
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+  </div>
+
+  <script src="panier.js"></script>
+  <script>
+  // ── Chargement des données produit depuis produits.json ──────────────────
+  const params   = new URLSearchParams(window.location.search);
+  const produitId = parseInt(params.get('id')) || 1;
+
+  fetch('produits.json')
+    .then(r => r.json())
+    .then(data => {
+      const produit = data.produits.find(p => p.id === produitId);
+      if (!produit) { document.getElementById('product-name').textContent = 'Produit introuvable'; return; }
+
+      // Titre & breadcrumb
+      document.title = 'MaBoutique.com — ' + produit.nom;
+      document.getElementById('panel-product-name').textContent = produit.nom;
+      document.getElementById('breadcrumb-name').textContent    = produit.nom;
+      document.getElementById('product-name').textContent       = produit.nom;
+
+      // Prix
+      let prixHTML = produit.prix.toFixed(2).replace('.', ',') + ' €';
+      if (produit.ancienPrix) {
+        prixHTML = '<span style="text-decoration:line-through;color:#888;font-size:14px;">'
+                 + produit.ancienPrix.toFixed(2).replace('.', ',') + ' €</span> &nbsp;'
+                 + produit.prix.toFixed(2).replace('.', ',') + ' €';
+      }
+      document.getElementById('product-price').innerHTML = prixHTML;
+
+      // Badges
+      let badges = '';
+      if (produit.badge === 'new')   badges = '<span class="badge badge-new">NOUVEAU</span>';
+      if (produit.badge === 'promo') badges = '<span class="badge badge-promo">PROMO</span>';
+      document.getElementById('product-badges').innerHTML = badges;
+
+      // Description
+      document.getElementById('product-desc').textContent = produit.description;
+
+      // Image principale
+      if (produit.images && produit.images.length > 0) {
+        document.getElementById('product-main-img').src = produit.images[0];
+      }
+
+      // Tailles
+      const sel = document.getElementById('select-taille');
+      if (produit.tailles && produit.tailles.length > 0) {
+        produit.tailles.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t; opt.textContent = t;
+          sel.appendChild(opt);
+        });
+      } else {
+        const opt = document.createElement('option');
+        opt.value = 'unique'; opt.textContent = 'Taille unique';
+        sel.appendChild(opt);
+      }
+
+      // Galerie
+      const gallery = document.getElementById('product-gallery');
+      if (produit.images && produit.images.length > 1) {
+        produit.images.forEach((src, i) => {
+          const img = document.createElement('img');
+          img.className = 'gallery-thumb' + (i === 0 ? ' selected' : '');
+          img.src = src;
+          img.alt = produit.nom + ' - photo ' + (i + 1);
+          img.onerror = function() {
+            this.style.background = '#aaa';
+            this.style.display = 'block';
+            this.removeAttribute('src');
+          };
+          img.onclick = function() {
+            document.getElementById('product-main-img').src = src;
+            document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('selected'));
+            this.classList.add('selected');
+          };
+          gallery.appendChild(img);
+        });
+      } else {
+        gallery.innerHTML = '<p style="font-size:11px;color:#888;font-style:italic;">Pas d\'autres photos disponibles.</p>';
+      }
+      
+      // Stocker le produit courant pour ajouterAuPanier()
+      window.__produitCourant = produit;
+    })
+    .catch(() => {
+      document.getElementById('product-name').textContent = 'Erreur de chargement';
+    });
+
+  // ── Ajout au panier ───────────────────────────────────────────────────────
+  function ajouterAuPanier() {
+    const produit = window.__produitCourant;
+    if (!produit) return;
+
+    const taille = document.getElementById('select-taille').value;
+    const qty    = parseInt(document.getElementById('select-qty').value) || 1;
+
+    if (!taille) {
+      alert('Veuillez sélectionner une taille.');
+      return;
+    }
+
+    // Utilise la fonction de panier.js
+    if (typeof ajouterItem === 'function') {
+      ajouterItem(produit, taille, qty);
+    }
+
+    // Message confirmation
+    const msg = document.getElementById('add-msg');
+    msg.style.display = 'flex';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  }
+  </script>
+
+</body>
+</html>

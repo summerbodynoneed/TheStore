@@ -3,58 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détail Produit</title>
+  <title>MaBoutique.com — Produits</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <header class="header-container">
-    <img src="..." alt="Logo">
-    <h1>Boutique en ligne</h1>
-    <a class="cart-link" href="cart.html" title="Voir le panier">
-      🛒
-      <span id="cart-badge" style="display:none;">0</span>
+  <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
+    📦 Tous nos produits sont disponibles en stock ! &nbsp;★&nbsp; Livraison gratuite dès 50€ &nbsp;★&nbsp; Paiement sécurisé PayPal &nbsp;★&nbsp;
+  </marquee>
+
+  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <div id="banner">
+    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="panier.html" id="cart-widget">
+      🛒 Panier &nbsp;<span id="cart-count">0</span>
     </a>
-  </header>
-
-  <nav class="center-text">
-    <a href="index.html">Accueil</a> | 
-    <a href="products.html">Produits</a> | 
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="product-detail">
-    <div>
-      <img id="image" width="100%" alt="Produit">
-    </div>
-    <div class="product-info">
-      <h1 id="title"></h1>
-      <p id="price" style="font-size: 20px; color: #c49b70; font-weight: bold;"></p>
-      <p id="desc"></p>
-
-      <div id="size-selector">
-        <label for="size">Taille :</label>
-        <select id="size">
-          <option value="">-- Choisir une taille --</option>
-        </select>
-      </div>
-
-      <div id="quantity-selector">
-        <label for="quantity">Quantité :</label>
-        <input type="number" id="quantity" min="1" value="1">
-      </div>
-
-      <button id="add-to-cart-btn">Ajouter au panier</button>
-      <p id="message"></p>
-    </div>
   </div>
-  
-  <p><a href="products.html">← Retour aux produits</a></p>
-</div>
 
-<script src="product.js"></script>
-<script src="product-detail.js"></script>
+  <!-- ══ NAVIGATION ════════════════════════════════════════ -->
+  <div id="main-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="product.html" class="active">📦 Produits</a>
+    <a href="contacts.html">✉️ Contacts</a>
+  </div>
+
+  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <div id="wrapper">
+
+    <div class="panel">
+      <div class="panel-title">
+        <span>📦 Tous nos Produits</span>
+        <span style="font-size:10px; font-weight:normal;">6 articles disponibles</span>
+      </div>
+      <div class="panel-body">
+
+        <div class="page-title">Notre Catalogue</div>
+
+        <!-- Grille des 6 produits -->
+        <div id="products-grid">
+
+          <!-- Produit 1 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=1">
+              <img class="product-card-img" src="images/produit1.jpg" alt="Veste Classique"
+                   onerror="this.style.background='#336699'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <span class="badge badge-new">NOUVEAU</span>
+              <a href="produit-detail.html?id=1" class="product-card-title">Veste Classique Premium</a>
+              <div class="product-card-price">49,90 €</div>
+              <a href="produit-detail.html?id=1" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+          <!-- Produit 2 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=2">
+              <img class="product-card-img" src="images/produit2.jpg" alt="Sac en Cuir"
+                   onerror="this.style.background='#663300'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <a href="produit-detail.html?id=2" class="product-card-title">Sac en Cuir Véritable</a>
+              <div class="product-card-price">79,90 €</div>
+              <a href="produit-detail.html?id=2" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+          <!-- Produit 3 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=3">
+              <img class="product-card-img" src="images/produit3.jpg" alt="Montre Vintage"
+                   onerror="this.style.background='#222222'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <a href="produit-detail.html?id=3" class="product-card-title">Montre Style Vintage</a>
+              <div class="product-card-price">129,00 €</div>
+              <a href="produit-detail.html?id=3" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+          <!-- Produit 4 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=4">
+              <img class="product-card-img" src="images/produit4.jpg" alt="Écharpe Laine"
+                   onerror="this.style.background='#8B4513'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <span class="badge badge-promo">PROMO</span>
+              <a href="produit-detail.html?id=4" class="product-card-title">Écharpe en Laine Douce</a>
+              <div class="product-card-price">
+                <span class="old-price">29,90 €</span>19,90 €
+              </div>
+              <a href="produit-detail.html?id=4" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+          <!-- Produit 5 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=5">
+              <img class="product-card-img" src="images/produit5.jpg" alt="Ceinture Cuir"
+                   onerror="this.style.background='#4a3728'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <span class="badge badge-new">NOUVEAU</span>
+              <a href="produit-detail.html?id=5" class="product-card-title">Ceinture Cuir Tressé</a>
+              <div class="product-card-price">34,90 €</div>
+              <a href="produit-detail.html?id=5" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+          <!-- Produit 6 -->
+          <div class="product-card">
+            <a href="produit-detail.html?id=6">
+              <img class="product-card-img" src="images/produit6.jpg" alt="Chapeau Feutre"
+                   onerror="this.style.background='#555544'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
+            </a>
+            <div class="product-card-body">
+              <a href="produit-detail.html?id=6" class="product-card-title">Chapeau en Feutre</a>
+              <div class="product-card-price">44,90 €</div>
+              <a href="produit-detail.html?id=6" class="btn btn-primary btn-small w100">
+                🛒 Ajouter au panier
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /#products-grid -->
+
+        <hr class="separator" style="margin-top:16px;">
+        <div class="text-center" style="font-size:11px; color:#666; margin-top:8px;">
+          Tous les prix sont TTC. Livraison calculée à la commande.
+        </div>
+
+      </div>
+    </div><!-- /.panel -->
+
+  </div><!-- /#wrapper -->
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <div id="footer">
+    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
+    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    <a href="contacts.html">Contact</a>
+  </div>
+
+  <script src="panier.js"></script>
 
 </body>
 </html>
