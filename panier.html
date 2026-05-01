@@ -14,7 +14,7 @@
 
   <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
   <div id="banner">
-    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="index.html" class="site-title">SBNN store</a>
     <a href="panier.html" id="cart-widget">
       🛒 Panier &nbsp;<span id="cart-count">0</span>
     </a>
@@ -22,9 +22,9 @@
 
   <!-- ══ NAVIGATION ════════════════════════════════════════ -->
   <div id="main-nav">
-    <a href="index.html">🏠 Accueil</a>
-    <a href="produits.html">📦 Produits</a>
-    <a href="contacts.html">✉️ Contacts</a>
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="contacts.html">Contacts</a>
   </div>
 
   <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
@@ -32,12 +32,12 @@
 
     <div class="panel">
       <div class="panel-title">
-        <span>🛒 Mon Panier</span>
-        <span id="cart-item-count-label" style="font-size:10px; font-weight:normal;">0 article(s)</span>
+        <span>🛒 My Cart</span>
+        <span id="cart-item-count-label" style="font-size:10px; font-weight:normal;">0 item(s)</span>
       </div>
       <div class="panel-body">
 
-        <div class="page-title">Récapitulatif de votre commande</div>
+        <div class="page-title">Order Summary</div>
 
         <!-- Tableau panier -->
         <div id="cart-content">
@@ -45,8 +45,8 @@
           <!-- État : panier vide -->
           <div id="cart-empty" class="cart-empty">
             <div style="font-size:40px; margin-bottom:10px;">🛒</div>
-            <p>Votre panier est vide.</p>
-            <a href="produits.html" class="btn btn-primary" style="margin-top:10px; display:inline-block;">
+            <p>Your cart is empty.</p>
+            <a href="product.html" class="btn btn-primary" style="margin-top:10px; display:inline-block;">
               → Voir nos produits
             </a>
           </div>
@@ -57,12 +57,12 @@
               <thead>
                 <tr>
                   <th style="width:40px;">Photo</th>
-                  <th>Produit</th>
-                  <th style="width:80px;">Taille</th>
-                  <th style="width:80px;">Prix unit.</th>
-                  <th style="width:70px;">Qté</th>
+                  <th>Product</th>
+                  <th style="width:80px;">Size</th>
+                  <th style="width:80px;">Unit Price</th>
+                  <th style="width:70px;">Quantity</th>
                   <th style="width:90px;">Total</th>
-                  <th style="width:50px;">Retirer</th>
+                  <th style="width:50px;">Remove</th>
                 </tr>
               </thead>
               <tbody id="cart-tbody">
@@ -72,7 +72,7 @@
                 <tr>
                   <td colspan="4"></td>
                   <td colspan="2" style="padding:6px 8px;">
-                    <div style="font-size:12px; color:#555;">Sous-total :</div>
+                    <div style="font-size:12px; color:#555;">Sub-total :</div>
                     <div id="cart-subtotal" style="font-size:14px; font-weight:bold; color:var(--price);">0,00 €</div>
                   </td>
                   <td></td>
@@ -102,17 +102,17 @@
             <!-- Actions panier -->
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
               <div>
-                <a href="produits.html" class="btn">← Continuer mes achats</a>
+                <a href="product.html" class="btn">← Continue shopping</a>
                 <button class="btn btn-danger btn-small" onclick="viderPanier()" style="margin-left:6px;">
-                  🗑️ Vider le panier
+                  🗑️ Clear cart
                 </button>
               </div>
               <div style="text-align:right;">
                 <button class="btn btn-paypal" onclick="allerQuestionnaire()">
-                  Passer commande &nbsp;▶
+                  Place order &nbsp;▶
                 </button>
                 <div style="font-size:10px; color:#888; margin-top:4px;">
-                  Vous serez redirigé vers PayPal après quelques questions
+                  You will be redirected to PayPal after a few questions
                 </div>
               </div>
             </div>
@@ -121,9 +121,9 @@
             <div class="msg-box msg-info" style="margin-top:12px;">
               <span class="msg-box-icon">🔒</span>
               <span>
-                Votre paiement est <strong>100% sécurisé</strong> via PayPal.
-                Nous ne stockons jamais vos données bancaires.
-                Avant le paiement, un court questionnaire (facultatif) vous sera proposé.
+                Your payment is <strong>100% secure</strong> via PayPal.
+                We never store your banking information.
+                Before payment, a short questionnaire (optional) will be proposed to you.
               </span>
             </div>
 
@@ -136,43 +136,10 @@
 
     <!-- Produits suggérés -->
     <div class="panel">
-      <div class="panel-title">💡 Vous pourriez aimer</div>
+      <div class="panel-title">You might also like</div>
       <div class="panel-body">
         <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;" id="suggestions">
-          <div class="product-card">
-            <a href="produit-detail.html?id=1">
-              <img class="product-card-img" src="images/produit1.jpg" alt="Veste Classique"
-                   onerror="this.style.background='#336699'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
-            </a>
-            <div class="product-card-body">
-              <a href="produit-detail.html?id=1" class="product-card-title" style="font-size:12px;">Veste Classique Premium</a>
-              <div class="product-card-price" style="font-size:13px;">49,90 €</div>
-              <a href="produit-detail.html?id=1" class="btn btn-small w100">Voir →</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <a href="produit-detail.html?id=2">
-              <img class="product-card-img" src="images/produit2.jpg" alt="Sac en Cuir"
-                   onerror="this.style.background='#663300'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
-            </a>
-            <div class="product-card-body">
-              <a href="produit-detail.html?id=2" class="product-card-title" style="font-size:12px;">Sac en Cuir Véritable</a>
-              <div class="product-card-price" style="font-size:13px;">79,90 €</div>
-              <a href="produit-detail.html?id=2" class="btn btn-small w100">Voir →</a>
-            </div>
-          </div>
-          <div class="product-card">
-            <a href="produit-detail.html?id=4">
-              <img class="product-card-img" src="images/produit4.jpg" alt="Écharpe Laine"
-                   onerror="this.style.background='#8B4513'; this.style.height='120px'; this.removeAttribute('src');" style="height:120px;">
-            </a>
-            <div class="product-card-body">
-              <span class="badge badge-promo">PROMO</span>
-              <a href="produit-detail.html?id=4" class="product-card-title" style="font-size:12px;">Écharpe en Laine Douce</a>
-              <div class="product-card-price" style="font-size:13px;"><span class="old-price">29,90 €</span>19,90 €</div>
-              <a href="produit-detail.html?id=4" class="btn btn-small w100">Voir →</a>
-            </div>
-          </div>
+          <div style="font-size:11px; color:#888; font-style:italic;">Loading...</div>
         </div>
       </div>
     </div>
@@ -181,8 +148,8 @@
 
   <!-- ══ FOOTER ════════════════════════════════════════════ -->
   <div id="footer">
-    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
-    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    &copy; 2020-2026 MaBoutique.com — All rights reserved &nbsp;|&nbsp;
+    <a href="contacts.html">General Terms of Sale</a> &nbsp;|&nbsp;
     <a href="contacts.html">Contact</a>
   </div>
 
@@ -249,20 +216,20 @@
     document.getElementById('cart-grand-total').textContent = total.toFixed(2).replace('.', ',') + ' €';
 
     if (livraison === 0) {
-      document.getElementById('cart-shipping').textContent = 'GRATUITE';
+      document.getElementById('cart-shipping').textContent = 'FREE';
       document.getElementById('cart-shipping').style.color = 'green';
-      document.getElementById('shipping-msg').textContent  = '(Livraison offerte !)';
+      document.getElementById('shipping-msg').textContent  = '(free delivery !)';
     } else {
       document.getElementById('cart-shipping').textContent = livraison.toFixed(2).replace('.', ',') + ' €';
       document.getElementById('shipping-msg').textContent  =
-        'Encore ' + (SEUIL_GRATUIT - sousTotal).toFixed(2).replace('.', ',') + '€ pour la livraison gratuite';
+        'Still ' + (SEUIL_GRATUIT - sousTotal).toFixed(2).replace('.', ',') + '€ for free delivery !';
     }
   }
 
   function allerQuestionnaire() {
     const items = obtenirPanier();
     if (!items || items.length === 0) {
-      alert('Votre panier est vide !');
+      alert('Your cart is empty !');
       return;
     }
     window.location.href = 'questionnaire.html';
@@ -274,3 +241,40 @@
 
 </body>
 </html>
+<script>
+  // ── Suggestions dynamiques depuis produits.json ─────────────────────────
+  fetch('product.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      const grille = document.getElementById('suggestions');
+      grille.innerHTML = '';
+
+      // Mélanger aléatoirement et prendre 3 produits
+      const melanges = data.products
+        .slice()
+        .sort(function () { return Math.random() - 0.5; })
+        .slice(0, 3);
+
+      melanges.forEach(function (p) {
+        const imgSrc = p.images && p.images.length > 0 ? p.images[0] : '';
+        const div    = document.createElement('div');
+        div.className = 'product-card';
+        div.innerHTML =
+          '<a href="prdouct-detail.html?id=' + p.id + '">' +
+            '<img class="product-card-img" src="' + imgSrc + '" alt="' + p.nom + '"' +
+                 ' style="height:120px;"' +
+                 ' onerror="this.style.background=\'#aaa\'; this.style.height=\'120px\'; this.removeAttribute(\'src\');">' +
+          '</a>' +
+          '<div class="product-card-body">' +
+            '<a href="prdouct-detail.html?id=' + p.id + '" class="product-card-title" style="font-size:12px;">' + p.nom + '</a>' +
+            '<div class="product-card-price" style="font-size:13px;">' + p.prix.toFixed(2).replace('.', ',') + ' €</div>' +
+            '<a href="prduct-detail.html?id=' + p.id + '" class="btn btn-small w100">Voir →</a>' +
+          '</div>';
+        grille.appendChild(div);
+      });
+    })
+    .catch(function () {
+      document.getElementById('suggestions').innerHTML =
+        '<p style="font-size:11px; color:#888; font-style:italic;">Suggestions indisponibles.</p>';
+    });
+</script>

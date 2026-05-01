@@ -144,14 +144,14 @@
   const params   = new URLSearchParams(window.location.search);
   const produitId = parseInt(params.get('id')) || 1;
 
-  fetch('produits.json')
+  fetch('product.json')
     .then(r => r.json())
     .then(data => {
       const produit = data.produits.find(p => p.id === produitId);
       if (!produit) { document.getElementById('product-name').textContent = 'Produit introuvable'; return; }
 
       // Titre & breadcrumb
-      document.title = 'MaBoutique.com — ' + produit.nom;
+      document.title = 'SBNN store — ' + produit.nom;
       document.getElementById('panel-product-name').textContent = produit.nom;
       document.getElementById('breadcrumb-name').textContent    = produit.nom;
       document.getElementById('product-name').textContent       = produit.nom;
