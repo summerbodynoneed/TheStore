@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaBoutique.com — Produits</title>
+  <title>SBNN store — Products</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
-    📦 Tous nos produits sont disponibles en stock ! &nbsp;★&nbsp; Livraison gratuite dès 50€ &nbsp;★&nbsp; Paiement sécurisé PayPal &nbsp;★&nbsp;
+    Products soon in stock &nbsp;★&nbsp; Free shipping from 50€ &nbsp;★&nbsp; Secure PayPal payment &nbsp;★&nbsp;
   </marquee>
 
   <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
   <div id="banner">
-    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="index.html" class="site-title">SBNN store</a>
     <a href="panier.html" id="cart-widget">
-      🛒 Panier &nbsp;<span id="cart-count">0</span>
+      🛒 Cart &nbsp;<span id="cart-count">0</span>
     </a>
   </div>
 
   <!-- ══ NAVIGATION ════════════════════════════════════════ -->
   <div id="main-nav">
-    <a href="index.html">🏠 Accueil</a>
-    <a href="product.html" class="active">📦 Produits</a>
-    <a href="contacts.html">✉️ Contacts</a>
+    <a href="index.html">Home</a>
+    <a href="product.html" class="active">Products</a>
+    <a href="contacts.html">Contacts</a>
   </div>
 
   <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
@@ -32,131 +32,103 @@
 
     <div class="panel">
       <div class="panel-title">
-        <span>📦 Tous nos Produits</span>
-        <span style="font-size:10px; font-weight:normal;">6 articles disponibles</span>
+        <span>All our products</span>
+        <span id="compteur-produits" style="font-size:10px; font-weight:normal;">Loading...</span>
       </div>
       <div class="panel-body">
 
-        <div class="page-title">Notre Catalogue</div>
+        <div class="page-title">Our products</div>
 
-        <!-- Grille des 6 produits -->
-        <div id="products-grid">
+        <!-- État chargement -->
+        <div id="etat-chargement" style="text-align:center; padding:20px; font-style:italic; color:#888;">
+          ⏳ Loading products... But nothing to do with doping, we promise! ⏳
+        </div>
 
-          <!-- Produit 1 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=1">
-              <img class="product-card-img" src="images/produit1.jpg" alt="Veste Classique"
-                   onerror="this.style.background='#336699'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <span class="badge badge-new">NOUVEAU</span>
-              <a href="produit-detail.html?id=1" class="product-card-title">Veste Classique Premium</a>
-              <div class="product-card-price">49,90 €</div>
-              <a href="produit-detail.html?id=1" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
+        <!-- État erreur -->
+        <div id="etat-erreur" style="display:none;" class="msg-box msg-error">
+          <span class="msg-box-icon">⚠️</span>
+          <span>Impossible to load the product catalog. False start</span>
+        </div>
 
-          <!-- Produit 2 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=2">
-              <img class="product-card-img" src="images/produit2.jpg" alt="Sac en Cuir"
-                   onerror="this.style.background='#663300'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <a href="produit-detail.html?id=2" class="product-card-title">Sac en Cuir Véritable</a>
-              <div class="product-card-price">79,90 €</div>
-              <a href="produit-detail.html?id=2" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
-
-          <!-- Produit 3 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=3">
-              <img class="product-card-img" src="images/produit3.jpg" alt="Montre Vintage"
-                   onerror="this.style.background='#222222'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <a href="produit-detail.html?id=3" class="product-card-title">Montre Style Vintage</a>
-              <div class="product-card-price">129,00 €</div>
-              <a href="produit-detail.html?id=3" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
-
-          <!-- Produit 4 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=4">
-              <img class="product-card-img" src="images/produit4.jpg" alt="Écharpe Laine"
-                   onerror="this.style.background='#8B4513'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <span class="badge badge-promo">PROMO</span>
-              <a href="produit-detail.html?id=4" class="product-card-title">Écharpe en Laine Douce</a>
-              <div class="product-card-price">
-                <span class="old-price">29,90 €</span>19,90 €
-              </div>
-              <a href="produit-detail.html?id=4" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
-
-          <!-- Produit 5 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=5">
-              <img class="product-card-img" src="images/produit5.jpg" alt="Ceinture Cuir"
-                   onerror="this.style.background='#4a3728'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <span class="badge badge-new">NOUVEAU</span>
-              <a href="produit-detail.html?id=5" class="product-card-title">Ceinture Cuir Tressé</a>
-              <div class="product-card-price">34,90 €</div>
-              <a href="produit-detail.html?id=5" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
-
-          <!-- Produit 6 -->
-          <div class="product-card">
-            <a href="produit-detail.html?id=6">
-              <img class="product-card-img" src="images/produit6.jpg" alt="Chapeau Feutre"
-                   onerror="this.style.background='#555544'; this.style.display='block'; this.alt=''; this.style.height='160px'; this.removeAttribute('src');">
-            </a>
-            <div class="product-card-body">
-              <a href="produit-detail.html?id=6" class="product-card-title">Chapeau en Feutre</a>
-              <div class="product-card-price">44,90 €</div>
-              <a href="produit-detail.html?id=6" class="btn btn-primary btn-small w100">
-                🛒 Ajouter au panier
-              </a>
-            </div>
-          </div>
-
-        </div><!-- /#products-grid -->
+        <!-- Grille générée dynamiquement -->
+        <div id="products-grid" style="display:none;"></div>
 
         <hr class="separator" style="margin-top:16px;">
         <div class="text-center" style="font-size:11px; color:#666; margin-top:8px;">
-          Tous les prix sont TTC. Livraison calculée à la commande.
+          All prices are inclusive of tax.
         </div>
 
       </div>
-    </div><!-- /.panel -->
+    </div>
 
   </div><!-- /#wrapper -->
 
   <!-- ══ FOOTER ════════════════════════════════════════════ -->
   <div id="footer">
-    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
-    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    &copy; 2020-2026 SBNN.store — All rights reserved &nbsp;|&nbsp;
+    <a href="contacts.html">General Terms and Conditions</a> &nbsp;|&nbsp;
     <a href="contacts.html">Contact</a>
   </div>
 
   <script src="panier.js"></script>
+  <script>
+  fetch('produits.json')
+    .then(function (r) {
+      if (!r.ok) throw new Error('Fichier introuvable');
+      return r.json();
+    })
+    .then(function (data) {
+      const produits = data.produits;
+      const grille   = document.getElementById('products-grid');
+
+      document.getElementById('etat-chargement').style.display = 'none';
+      document.getElementById('compteur-produits').textContent =
+        produits.length + ' article' + (produits.length > 1 ? 's' : '') + ' available' + (produits.length > 1 ? 's' : '');
+
+      produits.forEach(function (p) {
+        // Prix affiché
+        let prixHTML = '<div class="product-card-price">';
+        if (p.ancienPrix) {
+          prixHTML += '<span class="old-price">'
+                    + p.ancienPrix.toFixed(2).replace('.', ',') + ' €</span>';
+        }
+        prixHTML += p.prix.toFixed(2).replace('.', ',') + ' €</div>';
+
+        // Badge
+        let badgeHTML = '';
+        if (p.badge === 'new')   badgeHTML = '<span class="badge badge-new">NOUVEAU</span> ';
+        if (p.badge === 'promo') badgeHTML = '<span class="badge badge-promo">PROMO</span> ';
+
+        // Image principale
+        const imgSrc = p.images && p.images.length > 0 ? p.images[0] : '';
+
+        // Carte produit
+        const div = document.createElement('div');
+        div.className = 'product-card';
+        div.innerHTML =
+          '<a href="prdouct_detail.html?id=' + p.id + '">' +
+            '<img class="product-card-img" src="' + imgSrc + '" alt="' + p.nom + '"' +
+                 ' onerror="this.style.background=\'#aaa\'; this.style.height=\'160px\'; this.removeAttribute(\'src\');">' +
+          '</a>' +
+          '<div class="product-card-body">' +
+            badgeHTML +
+            '<a href="prdouct_detail.html?id=' + p.id + '" class="product-card-title">' + p.nom + '</a>' +
+            prixHTML +
+            '<a href="prdouct_detail.html?id=' + p.id + '" class="btn btn-primary btn-small w100">' +
+              '🛒 Add to cart' +
+            '</a>' +
+          '</div>';
+
+        grille.appendChild(div);
+      });
+
+      grille.style.display = 'grid';
+    })
+    .catch(function () {
+      document.getElementById('etat-chargement').style.display = 'none';
+      document.getElementById('etat-erreur').style.display     = 'flex';
+    });
+  </script>
 
 </body>
 </html>

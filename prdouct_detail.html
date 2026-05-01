@@ -14,7 +14,7 @@
 
   <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
   <div id="banner">
-    <a href="index.html" class="site-title">🛍️ MaBoutique.com</a>
+    <a href="index.html" class="site-title">SBNN Store</a>
     <a href="panier.html" id="cart-widget">
       🛒 Panier &nbsp;<span id="cart-count">0</span>
     </a>
@@ -22,9 +22,9 @@
 
   <!-- ══ NAVIGATION ════════════════════════════════════════ -->
   <div id="main-nav">
-    <a href="index.html">🏠 Accueil</a>
-    <a href="produits.html" class="active">📦 Produits</a>
-    <a href="contacts.html">✉️ Contacts</a>
+    <a href="index.html">Home</a>
+    <a href="product.html" class="active">Products</a>
+    <a href="contacts.html">Contacts</a>
   </div>
 
   <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
@@ -32,17 +32,17 @@
 
     <!-- Fil d'Ariane -->
     <div style="font-size:11px; margin-bottom:8px; color:#555;">
-      <a href="index.html">Accueil</a> &nbsp;»&nbsp;
-      <a href="produits.html">Produits</a> &nbsp;»&nbsp;
-      <span id="breadcrumb-name" style="color:#000;">Chargement...</span>
+      <a href="index.html">Home</a> &nbsp;»&nbsp;
+      <a href="product.html">Products</a> &nbsp;»&nbsp;
+      <span id="breadcrumb-name" style="color:#000;">Loading...</span>
     </div>
 
     <!-- Panneau détail -->
     <div class="panel">
       <div class="panel-title">
-        <span id="panel-product-name">Détail Produit</span>
+        <span id="panel-product-name">Product Detail</span>
         <span style="font-size:10px; font-weight:normal;">
-          <a href="produits.html" style="color:#aaccff;">← Retour aux produits</a>
+          <a href="product.html" style="color:#aaccff;">← Back to Products</a>
         </span>
       </div>
       <div class="panel-body">
@@ -60,14 +60,14 @@
             <!-- Message ajout panier -->
             <div id="add-msg" style="display:none; margin-top:8px;" class="msg-box msg-success">
               <span class="msg-box-icon">✅</span>
-              <span>Produit ajouté au panier !</span>
+              <span>Product added to cart!</span>
             </div>
           </div>
 
           <!-- Colonne droite : infos + options achat -->
           <div>
             <h1 id="product-name" style="font-family:var(--font-main); font-size:20px; color:var(--header-start); margin-bottom:6px; border-bottom:1px solid var(--border-dark); padding-bottom:4px;">
-              Chargement...
+              Loading...
             </h1>
 
             <div id="product-price" class="product-price" style="font-size:22px; font-weight:bold; color:var(--price); margin-bottom:6px; font-family:var(--font-main);">
@@ -77,22 +77,22 @@
             <div id="product-badges" style="margin-bottom:8px;"></div>
 
             <div id="product-desc" style="font-size:12px; line-height:1.7; color:var(--text); margin-bottom:12px; border-top:1px dotted var(--border-dark); padding-top:8px;">
-              Chargement de la description...
+              Loading description...
             </div>
 
             <!-- Options : taille & quantité -->
             <div class="buy-options">
               <table>
                 <tr>
-                  <td><label for="select-taille">Taille :</label></td>
+                  <td><label for="select-taille">Size :</label></td>
                   <td>
                     <select id="select-taille">
-                      <option value="">-- Choisir --</option>
+                      <option value="">-- Choose --</option>
                     </select>
                   </td>
                 </tr>
                 <tr>
-                  <td><label for="select-qty">Quantité :</label></td>
+                  <td><label for="select-qty">Quantity :</label></td>
                   <td>
                     <input type="number" id="select-qty" value="1" min="1" max="10"
                            style="width:60px;">
@@ -101,7 +101,7 @@
                 <tr>
                   <td colspan="2" style="padding-top:8px;">
                     <button class="btn btn-primary" onclick="ajouterAuPanier()" style="width:100%; font-size:13px; padding:6px 12px;">
-                      🛒 Ajouter au panier
+                      🛒 Add to Cart
                     </button>
                   </td>
                 </tr>
@@ -110,10 +110,10 @@
 
             <!-- Infos livraison -->
             <div style="font-size:11px; color:#555; line-height:1.9; border-top:1px dotted var(--border-dark); padding-top:8px; margin-top:4px;">
-              🚚 <strong>Livraison</strong> : 3 à 5 jours ouvrés<br>
-              💳 <strong>Paiement</strong> : 100% sécurisé via PayPal<br>
-              🔄 <strong>Retours</strong> : Gratuits sous 30 jours<br>
-              📦 <strong>Stock</strong> : <span style="color:green; font-weight:bold;">Disponible</span>
+              🚚 <strong>Delivery</strong> : 3 to 5 business days<br>
+              💳 <strong>Payment</strong> : 100% secure via PayPal<br>
+              🔄 <strong>Returns</strong> : Free within 30 days<br>
+              📦 <strong>Stock</strong> : <span style="color:green; font-weight:bold;">Available</span>
             </div>
 
           </div>
@@ -121,7 +121,7 @@
 
         <!-- Galerie de photos -->
         <hr class="separator">
-        <div class="panel-title" style="margin: 0 -10px 8px -10px;">📷 Galerie Photos</div>
+        <div class="panel-title" style="margin: 0 -10px 8px -10px;">📷 Gallery</div>
         <div id="product-gallery">
           <!-- Générée dynamiquement par JS -->
         </div>
@@ -131,7 +131,7 @@
 
     <!-- Produits similaires -->
     <div class="panel">
-      <div class="panel-title">👁️ Vous pourriez aussi aimer</div>
+      <div class="panel-title">You might also like</div>
       <div class="panel-body">
         <div id="similar-products" style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
           <!-- Généré dynamiquement -->
@@ -143,8 +143,8 @@
 
   <!-- ══ FOOTER ════════════════════════════════════════════ -->
   <div id="footer">
-    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
-    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    &copy; 2020-2026 SBNN.store — All rights reserved &nbsp;|&nbsp;
+    <a href="contacts.html">General Terms and Conditions</a> &nbsp;|&nbsp;
     <a href="contacts.html">Contact</a>
   </div>
 
