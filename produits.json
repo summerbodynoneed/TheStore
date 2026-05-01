@@ -9,9 +9,7 @@
       "description": "Basket jersey crochet handmaid, perfect to style sport apparel any season.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/TricotBasket.png",
-        "images/produit1-b.jpg",
-        "images/produit1-c.jpg"
+        "images/TricotBasket.png"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -25,9 +23,7 @@
       "description": "Sneakers black based on sandals design, to bring summer vibe any season.",
       "tailles": ["41", "42", "43", "44"],
       "images": [
-        "images/Chaussures.png",
-        "images/produit2-b.jpg",
-        "images/produit2-c.jpg"
+        "images/Chaussures.png"
       ],
       "stock": true,
       "categorie": "footwear"
@@ -41,9 +37,7 @@
       "description": "Tracksuit SBEUNEUNEUH, perfect for a sporty look and for your sunday runs.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/Ensemble.jpg",
-        "images/produit3-b.jpg",
-        "images/produit3-c.jpg"
+        "images/Ensemble.jpg"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -57,8 +51,7 @@
       "description": "Jeans jacket with fake snake skin pattern, ideal for a bold style for any occasion.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/SnakeJacket.jpg",
-        "images/produit4-b.jpg"
+        "images/SnakeJacket.jpg"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -72,9 +65,7 @@
       "description": "Football training top, perfect for your sports activities.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/veste sm.png",
-        "images/produit5-b.jpg",
-        "images/produit5-c.jpg"
+        "images/veste sm.png"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -88,8 +79,7 @@
       "description": "Tennis training jacket, perfect for your sports activities, but also to wear as a casual piece.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/Proto.png",
-        "images/produit6-b.jpg"
+        "images/Proto.png"
       ],
       "stock": true,
       "categorie": "clothes"
