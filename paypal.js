@@ -7,7 +7,7 @@
 
 // ── Configuration ────────────────────────────────────────────
 const PAYPAL_CONFIG = {
-  clientId:    'AVNbu24V1NZ5vQe9DuB3Jfvw_gxfxq3Z3ArZ5IZb-z_m65xQ3KykZ2elLpW4otoDjJPJx_myP1EcYmJY',   // ← À remplacer
+  clientId:    'AVNbu2AZqOS5ZZonz0_Ku1QyXlLMmB5tToDuPBMbHyjg5Q_mGm-oAc86U2gcemu5kXdnu17p1FXku5NA9UNRC84V1NZ5vQe9DuB3Jfvw_gxfxq3Z3ArZ5IZb-z_m65xQ3KykZ2elLpW4otoDjJPJx_myP1EcYmJY',   // ← À remplacer
   currency:    'EUR',
   fraisPort:   5.00,               // Frais de livraison par défaut
   seuilGratuit: 50.00              // Seuil livraison gratuite

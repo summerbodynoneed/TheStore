@@ -1,9 +1,9 @@
 /* ============================================================
-   SERVER.JS — Serveur Node.js / Express
-   Rôle : recevoir les réponses du questionnaire via POST
-          et les écrire dans reponses.json
-   Lancement : node server.js
-   Port par défaut : 3000
+   SERVER.JS — SBNN store
+   Receives questionnaire responses via POST and writes
+   them into reponses.json
+   Start: node server.js
+   Port : 3000
    ============================================================ */
 
 const express = require('express');
@@ -11,75 +11,63 @@ const fs      = require('fs');
 const path    = require('path');
 const cors    = require('cors');
 
-const app            = express();
-const PORT           = 3000;
-const FICHIER_JSON   = path.join(__dirname, 'reponses.json');
-const DOSSIER_SITE   = __dirname; // tous les fichiers HTML/CSS/JS sont au même niveau
+const app          = express();
+const PORT         = 3000;
+const RESPONSES_FILE = path.join(__dirname, 'reponses.json');
 
-// ── Middlewares ──────────────────────────────────────────────
-app.use(cors());                          // autorise les requêtes depuis le navigateur
-app.use(express.json());                  // parse le body JSON des requêtes POST
-app.use(express.static(DOSSIER_SITE));    // sert tous les fichiers HTML, CSS, JS, JSON, images
+app.use(cors());
+app.use(express.json());
+app.use(express.static(__dirname));
 
-// ── GET /api/reponses — lire toutes les réponses ─────────────
-app.get('/api/reponses', function (req, res) {
+// ── GET /api/responses — read all responses ──────────────────
+app.get('/api/responses', function (req, res) {
   try {
-    const contenu = fs.readFileSync(FICHIER_JSON, 'utf8');
-    const data    = JSON.parse(contenu);
-    res.json(data.reponses || []);
+    const data = JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'));
+    res.json(data.responses || []);
   } catch (err) {
-    console.error('Erreur lecture reponses.json :', err.message);
-    res.status(500).json({ erreur: 'Impossible de lire les réponses.' });
+    console.error('Read error:', err.message);
+    res.status(500).json({ error: 'Unable to read responses.' });
   }
 });
 
-// ── POST /api/reponses — enregistrer une nouvelle réponse ─────
-app.post('/api/reponses', function (req, res) {
-  const nouvelle = req.body;
+// ── POST /api/responses — save a new response ────────────────
+app.post('/api/responses', function (req, res) {
+  const entry = req.body;
 
-  // Validation minimale : l'e-mail doit être présent
-  if (!nouvelle || !nouvelle.email) {
-    return res.status(400).json({ erreur: 'Champ email manquant.' });
+  if (!entry || !entry.email) {
+    return res.status(400).json({ error: 'Missing email field.' });
   }
 
-  // Ajouter l'horodatage serveur si absent
-  if (!nouvelle.horodatage) {
-    nouvelle.horodatage = new Date().toISOString();
-  }
+  if (!entry.timestamp) entry.timestamp = new Date().toISOString();
 
   try {
-    // Lire le fichier existant
-    let data = { reponses: [] };
-    if (fs.existsSync(FICHIER_JSON)) {
-      const contenu = fs.readFileSync(FICHIER_JSON, 'utf8');
-      data = JSON.parse(contenu);
-      if (!Array.isArray(data.reponses)) data.reponses = [];
+    let data = { responses: [] };
+    if (fs.existsSync(RESPONSES_FILE)) {
+      data = JSON.parse(fs.readFileSync(RESPONSES_FILE, 'utf8'));
+      if (!Array.isArray(data.responses)) data.responses = [];
     }
 
-    // Ajouter la nouvelle réponse
-    data.reponses.push(nouvelle);
+    data.responses.push(entry);
+    fs.writeFileSync(RESPONSES_FILE, JSON.stringify(data, null, 2), 'utf8');
 
-    // Réécrire le fichier proprement
-    fs.writeFileSync(FICHIER_JSON, JSON.stringify(data, null, 2), 'utf8');
-
-    console.log('✅ Reply registered — email :', nouvelle.email);
-    res.json({ succes: true, total: data.reponses.length });
+    console.log('✅ Response saved — email:', entry.email, '| q1:', entry.q1_benefit);
+    res.json({ success: true, total: data.responses.length });
 
   } catch (err) {
-    console.error('Erreur écriture reponses.json :', err.message);
-    res.status(500).json({ erreur: 'Impossible d\'enregistrer la réponse.' });
+    console.error('Write error:', err.message);
+    res.status(500).json({ error: 'Unable to save response.' });
   }
 });
 
-// ── Démarrage ────────────────────────────────────────────────
+// ── Start ────────────────────────────────────────────────────
 app.listen(PORT, function () {
   console.log('');
-  console.log('SBNN store — Serveur démarré');
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('🌐 Site       : http://localhost:' + PORT);
-  console.log('📋 Réponses   : http://localhost:' + PORT + '/api/reponses');
-  console.log('📁 JSON       : ' + FICHIER_JSON);
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('Appuie sur Ctrl+C pour arrêter.');
+  console.log('🛍️  SBNN.store — Server started');
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('🌐 Site      : http://localhost:' + PORT);
+  console.log('📋 Responses : http://localhost:' + PORT + '/api/responses');
+  console.log('📁 File      : ' + RESPONSES_FILE);
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('Press Ctrl+C to stop.');
   console.log('');
 });

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SBNN store — Questionnaire</title>
+  <title>SBNN store — Quick Question</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <marquee class="retro-marquee" behavior="scroll" direction="left" scrollamount="3">
-    This questionnaire is anonymous and optional — it helps us improve our project &nbsp;★&nbsp; Thank you for your participation &nbsp;★&nbsp;
+    ✏️ One quick question before checkout — it helps us give back to the community &nbsp;★&nbsp; Thank you for your support &nbsp;★&nbsp;
   </marquee>
 
-  <!-- ══ BANNIÈRE ══════════════════════════════════════════ -->
+  <!-- ══ BANNER ══════════════════════════════════════════ -->
   <div id="banner">
     <a href="index.html" class="site-title">SBNN store</a>
     <a href="panier.html" id="cart-widget">
-      🛒 Panier &nbsp;<span id="cart-count">0</span>
+      🛒 Cart &nbsp;<span id="cart-count">0</span>
     </a>
   </div>
 
@@ -27,118 +27,102 @@
     <a href="contacts.html">Contacts</a>
   </div>
 
-  <!-- ══ CONTENU PRINCIPAL ═════════════════════════════════ -->
+  <!-- ══ MAIN CONTENT ══════════════════════════════════════ -->
   <div id="wrapper">
 
-    <!-- Étapes de commande -->
+    <!-- Order steps -->
     <div class="panel" style="margin-bottom:8px;">
       <div class="panel-body" style="padding:8px;">
         <div style="display:flex; align-items:center; gap:4px; font-size:11px; font-weight:bold;">
           <span style="background:green; color:#fff; padding:2px 8px;">① Cart</span>
           <span style="color:#888;">▶</span>
-          <span style="background:var(--accent); color:#fff; padding:2px 8px;">② Questionnaire</span>
+          <span style="background:var(--accent); color:#fff; padding:2px 8px;">② Quick Question</span>
           <span style="color:#888;">▶</span>
-          <span style="background:var(--btn-face); color:#666; padding:2px 8px; border:1px solid #aaa;">③ Payment PayPal</span>
+          <span style="background:var(--btn-face); color:#666; padding:2px 8px; border:1px solid #aaa;">③ PayPal Payment</span>
         </div>
       </div>
     </div>
 
     <div class="panel">
       <div class="panel-title">
-        <span>Questionnaire — Let's decide where we go</span>
+        <span>✏️ One question before checkout</span>
       </div>
       <div class="panel-body">
 
-        <div class="msg-box msg-info" style="margin-bottom:12px;">
-          <span class="msg-box-icon">ℹ️</span>
+        <div class="msg-box msg-info" style="margin-bottom:16px;">
+          <span class="msg-box-icon">💙</span>
           <span>
-            This questionnaire is <strong>completely optional</strong> and does not delay your order.
-            Your responses help us to target our next investments. Your email address is only to keep you update with the evolution of clubs and athletes we follow according to what you informed in the questionnaire.
+            At SBNN, <strong>giving back matters</strong>. This optional question helps us decide
+            how to redistribute part of our profits to the community.
+            Your answer won't affect your order in any way.
           </span>
         </div>
 
-        <!-- Barre de progression -->
-        <div style="margin-bottom:12px;">
-          <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:3px;">
-            <span>Progression</span>
-            <span id="progress-text">Answers</span>
-          </div>
-          <div id="progress-bar-wrap">
-            <div id="progress-bar"></div>
-            <div id="progress-label">0%</div>
-          </div>
-        </div>
-
-        <!-- ── FORMULAIRE ─────────────────────────────────────────── -->
         <div id="questionnaire-form">
 
           <!-- Email -->
           <div class="question-block">
-            <div class="q-number">Your email (required)</div>
-            <div class="q-text">What is your email address ?</div>
-            <input type="email" id="q-email" class="q-email-field" placeholder="your@email.com"
-                   style="width:100%; max-width:360px;"
-                   oninput="mettreAJourProgression()">
+            <div class="q-number">Your e-mail (required)</div>
+            <div class="q-text">📧 What is your e-mail address?</div>
+            <input type="email" id="q-email" placeholder="your@email.com"
+                   style="width:100%; max-width:360px;">
             <div style="font-size:10px; color:#666; margin-top:4px;">
-              * Nothing will be shared with any third party.
+              * Used only to send your order confirmation. Never shared with third parties.
             </div>
           </div>
 
           <!-- Question 1 -->
           <div class="question-block">
-            <div class="q-number">Question</div>
-            <div class="q-text">🔍 How you want us to redistibute the benefit ?</div>
+            <div class="q-number">Question 1 / 1</div>
+            <div class="q-text">🏆 How would you like us to redistribute the benefit?</div>
             <div class="q-options">
-              <label><input type="radio" name="q1" value="moteur" onchange="mettreAJourProgression()"> Help a club</label>
-              <label><input type="radio" name="q1" value="reseau" onchange="mettreAJourProgression()"> Help an athlete</label>
-              <label><input type="radio" name="q1" value="bouche" onchange="mettreAJourProgression()"> Pay your next race</label>
-              <label><input type="radio" name="q1" value="autre"  onchange="mettreAJourProgression()"> As you wish</label>
+              <label><input type="radio" name="q1" value="Help a club"> Help a club</label>
+              <label><input type="radio" name="q1" value="Help an athlete"> Help an athlete</label>
+              <label><input type="radio" name="q1" value="Pay your next race"> Pay your next race</label>
+              <label><input type="radio" name="q1" value="As you wish"> As you wish</label>
             </div>
           </div>
 
-
-          <!-- Boutons d'action -->
+          <!-- Actions -->
           <hr class="separator">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:8px;">
             <div>
-              <a href="panier.html" class="btn">← Return to cart</a>
+              <a href="panier.html" class="btn">← Back to cart</a>
               <button class="btn" onclick="passerSansPondre()" style="margin-left:6px; font-size:11px; color:#666;">
-                Skip without answering →
+                Skip →
               </button>
             </div>
             <div style="text-align:right;">
               <button class="btn btn-paypal" onclick="validerEtPayer()">
-                💳 Valider et payer via PayPal ▶
+                💳 Confirm & Pay via PayPal ▶
               </button>
               <div style="font-size:10px; color:#888; margin-top:4px;">
-                Your responses are saved before redirecting
+                Your answer is saved before redirection
               </div>
             </div>
           </div>
 
         </div><!-- /#questionnaire-form -->
 
-        <!-- Message de confirmation (caché par défaut) -->
         <div id="msg-sauvegarde" class="msg-box msg-success" style="display:none; margin-top:10px;">
           <span class="msg-box-icon">✅</span>
-          <span>Thank you for your responses! Redirecting to PayPal...</span>
+          <span>Thank you! Redirecting to PayPal...</span>
         </div>
 
-        <!-- Message d'erreur email -->
         <div id="msg-erreur-email" class="msg-box msg-error" style="display:none; margin-top:10px;">
           <span class="msg-box-icon">⚠️</span>
-          <span>Please insert a valid email address</span>
+          <span>Please enter a valid e-mail address.</span>
         </div>
 
       </div>
-    </div><!-- /.panel -->
+    </div>
 
   </div><!-- /#wrapper -->
 
   <!-- ══ FOOTER ════════════════════════════════════════════ -->
   <div id="footer">
-    &copy; 2001-2024 MaBoutique.com — Tous droits réservés &nbsp;|&nbsp;
-    <a href="contacts.html">Conditions Générales de Vente</a> &nbsp;|&nbsp;
+    &copy; 2020-2026 SBNN.store — All rights reserved &nbsp;|&nbsp;
+    <a href="contacts.html">General Terms and Conditions</a> &nbsp;|&nbsp;
     <a href="contacts.html">Contact</a>
   </div>
 
