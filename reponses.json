@@ -1,20 +1,33 @@
 {
   "_comment": "Responses collected from the SBNN.store pre-payment questionnaire. Stored via server.js POST /api/responses.",
-
   "_structure": {
-    "timestamp":    "2026-01-15T14:32:00.000Z",
-    "email":        "customer@example.com",
-    "q1_benefit":   "Help a club | Help an athlete | Pay your next race | As you wish",
-    "cart_total":   60.00,
+    "timestamp": "2026-01-15T14:32:00.000Z",
+    "email": "customer@example.com",
+    "q1_benefit": "Help a club | Help an athlete | Pay your next race | As you wish",
+    "cart_total": 60,
     "cart_items": [
       {
-        "id":   1,
+        "id": 1,
         "name": "Sneakers SBNN",
         "size": "M",
-        "qty":  1
+        "qty": 1
       }
     ]
   },
-
-  "responses": []
+  "responses": [
+    {
+      "timestamp": "2026-05-02T20:27:26.453Z",
+      "email": "summerbodynoneed@gmail.com",
+      "q1_benefit": "Help an athlete",
+      "cart_total": 60,
+      "cart_items": [
+        {
+          "id": 2,
+          "name": "Sneakers SBNN",
+          "size": "44",
+          "qty": 1
+        }
+      ]
+    }
+  ]
 }
