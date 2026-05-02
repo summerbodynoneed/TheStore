@@ -96,8 +96,9 @@
 
         // Badge
         let badgeHTML = '';
-        if (p.badge === 'new')   badgeHTML = '<span class="badge badge-new">NOUVEAU</span> ';
+        if (p.badge === 'new')   badgeHTML = '<span class="badge badge-new">NEW</span> ';
         if (p.badge === 'promo') badgeHTML = '<span class="badge badge-promo">PROMO</span> ';
+        if (p.badge === 'soon') badgeHTML = '<span class="badge badge-soon">SOON</span> ';
 
         // Image principale
         const imgSrc = p.images && p.images.length > 0 ? p.images[0] : '';

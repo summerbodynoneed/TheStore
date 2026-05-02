@@ -40,77 +40,42 @@
       </div>
       <div class="panel-body" style="padding:0;">
 
-        <div id="slideshow">
-          <!-- Slide 1 -->
-          <div class="slide active" id="slide-0">
-            <img src="images/Chaussures.png" alt="Sneakers SBNN" onerror="this.style.background='#336699'; this.style.height='480px'; this.removeAttribute('src');">
-            <div class="slide-caption">
-              <h3>Sneakers SBNN</h3>
-              <p><strong style="color:#ffdd88;">60 €</strong> &nbsp;
-                <a href="prdouct_detail.html?id=2" style="color:#aaccff; font-size:11px;">→ Check the product</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide" id="slide-1">
-            <img src="images/TricotBasket.png" alt="Crochet Basket Jersey" onerror="this.style.background='#663300'; this.style.height='480px'; this.removeAttribute('src');">
-            <div class="slide-caption">
-              <h3>Crochet Basket Jersey</h3>
-              <p><strong style="color:#ffdd88;">90 €</strong> &nbsp;
-                <a href="prdouct_detail.html?id=1" style="color:#aaccff; font-size:11px;">→ Check the product</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide" id="slide-2">
-            <img src="images/Proto.png" alt="Tennis Training Jacket" onerror="this.style.background='#222222'; this.style.height='480px'; this.removeAttribute('src');">
-            <div class="slide-caption">
-              <h3>Tennis Training Jacket</h3>
-              <p><strong style="color:#ffdd88;">35 €</strong> &nbsp;
-                <a href="prdouct_detail.html?id=6" style="color:#aaccff; font-size:11px;">→ Check the product</a>
-              </p>
-            </div>
-          </div>
-        </div><!-- /#slideshow -->
+        <!-- Slides générées dynamiquement depuis product.json -->
+        <div id="slideshow"></div>
 
         <div id="slideshow-controls">
           <button class="btn btn-small slide-btn" onclick="prevSlide()">◀ Préc.</button>
-          <span class="slide-dot active" onclick="goToSlide(0)"></span>
-          <span class="slide-dot"        onclick="goToSlide(1)"></span>
-          <span class="slide-dot"        onclick="goToSlide(2)"></span>
+          <div id="dots-container" style="display:flex; gap:6px;"></div>
           <button class="btn btn-small slide-btn" onclick="nextSlide()">Suiv. ▶</button>
         </div>
 
       </div>
     </div><!-- /.panel -->
 
-      <!-- Texte de bienvenue -->
-      <div class="panel">
-        <div class="panel-title">Welcome to SBNN.store</div>
-        <div class="panel-body">
-          <div id="welcome-text">
-            <h2>Your trusted shop since 2020</h2>
-            <p>
-              Discover our selection of products carefully chosen for their quality and style.
-              We offer a wide range of fashion items, accessories and more, delivered directly to your doorstep.
-            </p>
-            <p style="margin-top:8px;">
-              Payment <strong>100% secure</strong> via PayPal. Shipping in 3 to 5 business days.
-              Returns accepted within 30 days.
-            </p>
-            <p style="margin-top:8px;">
-              <a href="product.html">→ View all our products</a>
-            </p>
-            <div style="margin-top:10px;">
-              <span style="font-size:11px; font-weight:bold; color:#555;">Visitors since opening:</span><br>
-              <span class="visitor-counter">477 000</span>
-            </div>
+    <!-- Texte de bienvenue -->
+    <div class="panel">
+      <div class="panel-title">Welcome to SBNN.store</div>
+      <div class="panel-body">
+        <div id="welcome-text">
+          <h2>Your trusted shop since 2020</h2>
+          <p>
+            Discover our selection of products carefully chosen for their quality and style.
+            We offer a wide range of fashion items, accessories and more, delivered directly to your doorstep.
+          </p>
+          <p style="margin-top:8px;">
+            Payment <strong>100% secure</strong> via PayPal. Shipping in 3 to 5 business days.
+            Returns accepted within 30 days.
+          </p>
+          <p style="margin-top:8px;">
+            <a href="product.html">→ View all our products</a>
+          </p>
+          <div style="margin-top:10px;">
+            <span style="font-size:11px; font-weight:bold; color:#555;">Visitors since opening:</span><br>
+            <span class="visitor-counter">477 000</span>
           </div>
         </div>
       </div>
-    </div><!-- /grid -->
+    </div>
 
   </div><!-- /#wrapper -->
 
@@ -119,11 +84,55 @@
     &copy; 2020-2026 SBNN.store — All rights reserved &nbsp;|&nbsp;
     <a href="contacts.html">General Terms and Conditions</a> &nbsp;|&nbsp;
     <a href="contacts.html">Contact</a>
-    <br>
   </div>
 
   <script src="panier.js"></script>
   <script src="slideshow.js"></script>
+  <script>
+  // ── Génération dynamique du slideshow depuis product.json ────────────────
+  fetch('product.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      const slideshow = document.getElementById('slideshow');
+      const dotsWrap  = document.getElementById('dots-container');
+      const produits  = data.produits;
+
+      produits.forEach(function (p, i) {
+        const imgSrc = p.images && p.images.length > 0 ? p.images[0] : '';
+        const prix   = p.prix.toFixed(2).replace('.', ',') + ' €';
+
+        // Slide
+        const slide = document.createElement('div');
+        slide.className = 'slide' + (i === 0 ? ' active' : '');
+        slide.id = 'slide-' + i;
+        slide.innerHTML =
+          '<img src="' + imgSrc + '" alt="' + p.nom + '"' +
+               ' onerror="this.style.background=\'#444\'; this.style.height=\'480px\'; this.removeAttribute(\'src\');">' +
+          '<div class="slide-caption">' +
+            '<h3>' + p.nom + '</h3>' +
+            '<p>' +
+              '<strong style="color:#ffdd88;">' + prix + '</strong> &nbsp;' +
+              '<a href="prdouct_detail.html?id=' + p.id + '" style="color:#aaccff; font-size:11px;">→ Check the product</a>' +
+            '</p>' +
+          '</div>';
+        slideshow.appendChild(slide);
+
+        // Point de navigation
+        const dot = document.createElement('span');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('onclick', 'goToSlide(' + i + ')');
+        dotsWrap.appendChild(dot);
+      });
+
+      // Lancer le slideshow une fois les slides dans le DOM
+      if (typeof initSlideshow === 'function') initSlideshow();
+    })
+    .catch(function () {
+      document.getElementById('slideshow').innerHTML =
+        '<div style="height:280px; display:flex; align-items:center; justify-content:center;' +
+        ' color:#aaa; font-style:italic;">Unable to load products.</div>';
+    });
+  </script>
 
 </body>
 </html>

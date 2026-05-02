@@ -37,7 +37,8 @@
       "description": "Tracksuit SBEUNEUNEUH, perfect for a sporty look and for your sunday runs.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/Ensemble.jpg"
+        "images/SurvetHaut.png",
+        "images/SurvetBas.png"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -47,7 +48,7 @@
       "nom": "Snake Jacket",
       "prix": 35,
       "ancienPrix": null,
-      "badge": null,
+      "badge": "soon",
       "description": "Jeans jacket with fake snake skin pattern, ideal for a bold style for any occasion.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
@@ -65,7 +66,7 @@
       "description": "Football training top, perfect for your sports activities.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/veste sm.png"
+        "images/FootJacket.png"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -75,11 +76,11 @@
       "nom": "Tennis Training Jacket",
       "prix": 35,
       "ancienPrix": null,
-      "badge": null,
+      "badge": "soon",
       "description": "Tennis training jacket, perfect for your sports activities, but also to wear as a casual piece.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/Proto.png"
+        "images/TennisJacket.png"
       ],
       "stock": true,
       "categorie": "clothes"
