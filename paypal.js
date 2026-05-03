@@ -51,7 +51,7 @@ function chargerSDKPayPal(callback) {
 
   const script   = document.createElement('script');
   script.id      = 'paypal-sdk';
-  script.src     = 'https://sandbox.paypal.com'
+  script.src     = 'https://www.sandbox.paypal.com/sdk/js'
                  + '?client-id=' + PAYPAL_CONFIG.clientId
                  + '&currency=' + PAYPAL_CONFIG.currency
   script.onload  = callback;
