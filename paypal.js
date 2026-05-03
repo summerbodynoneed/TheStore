@@ -51,10 +51,9 @@ function chargerSDKPayPal(callback) {
 
   const script   = document.createElement('script');
   script.id      = 'paypal-sdk';
-  script.src     = 'https://www.paypal.com/sdk/js'
+  script.src     = 'https://sandbox.paypal.com'
                  + '?client-id=' + PAYPAL_CONFIG.clientId
                  + '&currency=' + PAYPAL_CONFIG.currency
-                 + '&locale=fr_FR';
   script.onload  = callback;
   script.onerror = function () {
     console.error('Impossible de charger le SDK PayPal.');
