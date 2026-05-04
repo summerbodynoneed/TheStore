@@ -52,7 +52,7 @@
       "description": "Jeans jacket with fake snake skin pattern, ideal for a bold style for any occasion.",
       "tailles": ["S", "M", "L", "XL"],
       "images": [
-        "images/SnakeJacket.jpg"
+        "images/Sn.png"
       ],
       "stock": true,
       "categorie": "clothes"
