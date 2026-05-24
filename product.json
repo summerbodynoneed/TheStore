@@ -11,7 +11,7 @@
       "images": [
         "images/TricotBasket.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "clothes"
     },
     {
@@ -25,7 +25,7 @@
       "images": [
         "images/Chaussures.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "footwear"
     },
     {
@@ -40,7 +40,7 @@
         "images/SurvetHaut.png",
         "images/SurvetBas.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "clothes"
     },
     {
@@ -54,7 +54,7 @@
       "images": [
         "images/Sn.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "clothes"
     },
     {
@@ -68,7 +68,7 @@
       "images": [
         "images/FootJacket.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "clothes"
     },
     {
@@ -82,7 +82,7 @@
       "images": [
         "images/TennisJacket.png"
       ],
-      "stock": true,
+      "stock": false,
       "categorie": "clothes"
     },
     {
@@ -90,7 +90,7 @@
       "nom": "T-shirt Football",
       "prix": 15,
       "ancienPrix": null,
-      "badge": "soon",
+      "badge": "New",
       "description": "Lifestyle t-shirt football, perfect to showcase your ball knowledge.",
       "tailles": ["M"],
       "images": [
