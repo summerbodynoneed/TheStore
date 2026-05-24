@@ -85,6 +85,20 @@
       "stock": true,
       "categorie": "clothes"
     }
+    {
+      "id": 7,
+      "nom": "T-shirt Football",
+      "prix": 15,
+      "ancienPrix": null,
+      "badge": "soon",
+      "description": "Lifestyle t-shirt football, perfect to showcase your ball knowledge.",
+      "tailles": ["M"],
+      "images": [
+        "images/TshirtFootball.png"
+      ],
+      "stock": true,
+      "categorie": "clothes"
+    },
   ],
 
   "categories": [
