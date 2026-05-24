@@ -84,7 +84,7 @@
       ],
       "stock": true,
       "categorie": "clothes"
-    }
+    },
     {
       "id": 7,
       "nom": "T-shirt Football",
@@ -98,7 +98,7 @@
       ],
       "stock": true,
       "categorie": "clothes"
-    },
+    }
   ],
 
   "categories": [
