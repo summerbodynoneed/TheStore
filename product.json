@@ -4,6 +4,7 @@
       "id": 1,
       "nom": "Crochet Basket Jersey",
       "prix": 90,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Basket jersey crochet handmaid, perfect to style sport apparel any season.",
@@ -18,6 +19,7 @@
       "id": 2,
       "nom": "Sneakers SBNN",
       "prix": 60,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Sneakers black based on sandals design, to bring summer vibe any season.",
@@ -32,6 +34,7 @@
       "id": 3,
       "nom": "Tracksuit SBEUNEUNEUH",
       "prix": 40,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Tracksuit SBEUNEUNEUH, perfect for a sporty look and for your sunday runs.",
@@ -47,6 +50,7 @@
       "id": 4,
       "nom": "Snake Jacket",
       "prix": 35,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Jeans jacket with fake snake skin pattern, ideal for a bold style for any occasion.",
@@ -61,6 +65,7 @@
       "id": 5,
       "nom": "Football Training Top",
       "prix": 25,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Football training top, perfect for your sports activities.",
@@ -75,6 +80,7 @@
       "id": 6,
       "nom": "Tennis Training Jacket",
       "prix": 35,
+      "archive": true,
       "ancienPrix": null,
       "badge": "soon",
       "description": "Tennis training jacket, perfect for your sports activities, but also to wear as a casual piece.",
@@ -89,12 +95,14 @@
       "id": 7,
       "nom": "T-shirt Football",
       "prix": 15,
-      "ancienPrix": null,
+      "archive": false,
+      "ancienPrix": 19,
       "badge": "New",
       "description": "Lifestyle t-shirt football, perfect to showcase your ball knowledge.",
       "tailles": ["M"],
       "images": [
-        "images/TshirtFootball.png"
+        "images/TshirtFoot.png",
+        "images/TshirtFootDos.png"
       ],
       "stock": true,
       "categorie": "clothes"
@@ -111,6 +119,6 @@
     "derniereMaj":   "2026-04-30",
     "devise":        "EUR",
     "fraisPort":     5.00,
-    "seuilGratuit":  50.00
+    "seuilGratuit":  15.00
   }
 }

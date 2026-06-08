@@ -78,7 +78,8 @@
       return r.json();
     })
     .then(function (data) {
-      const produits = data.produits;
+      const produits = data.produits.filter(p => !p.archive);
+      const archives = data.produits.filter(p => p.archive);
       const grille   = document.getElementById('products-grid');
 
       document.getElementById('etat-chargement').style.display = 'none';
