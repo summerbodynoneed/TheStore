@@ -314,25 +314,29 @@ input[type="checkbox"] {
 #slideshow {
   position: relative;
   width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 10px;
   overflow: hidden;
   background-color: #000000;
   border: 3px solid;
   border-color: var(--btn-shadow) var(--btn-light) var(--btn-light) var(--btn-shadow);
-  margin-bottom: 10px;
 }
 
 .slide {
   display: none;
-  position: relative;
+  position: absolute;
+  inset: 0;
 }
 
 .slide.active { display: block; }
 
 .slide img {
   width: 100%;
-  height: 480px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  background-color: #000000;
 }
 
 .slide-caption {

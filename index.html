@@ -105,7 +105,16 @@
     .then(function (data) {
       const slideshow = document.getElementById('slideshow');
       const dotsWrap  = document.getElementById('dots-container');
-      const produits  = data.produits;
+      const produits  = data.produits.filter(function (p) {
+        return !p.archive;
+      });
+
+      if (produits.length === 0) {
+        slideshow.innerHTML =
+          '<div style="height:280px; display:flex; align-items:center; justify-content:center;' +
+          ' color:#aaa; font-style:italic;">Aucun produit actif à afficher.</div>';
+        return;
+      }
 
       produits.forEach(function (p, i) {
         const imgSrc = p.images && p.images.length > 0 ? p.images[0] : '';
