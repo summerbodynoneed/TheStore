@@ -40,7 +40,6 @@ function construireArticlesPayPal() {
   });
 }
 
-// ── Charger le SDK PayPal Sandbox ─────────────────────────────
 function chargerSDKPayPal(callback) {
   if (document.getElementById('paypal-sdk')) {
     callback();
@@ -49,7 +48,6 @@ function chargerSDKPayPal(callback) {
 
   const script  = document.createElement('script');
   script.id     = 'paypal-sdk';
-  // URL Sandbox — remplace par https://www.paypal.com/sdk/js en production
   script.src    = 'https://www.paypal.com/sdk/js'
                 + '?client-id=' + PAYPAL_CONFIG.clientId
                 + '&currency=' + PAYPAL_CONFIG.currency;
@@ -124,8 +122,7 @@ function afficherBoutonPayPal(containerId) {
           '✅ Payment confirmed, thank you ' + name + '!\n\n'
           + 'Order ID: ' + details.id + '\n'
           + 'Amount charged: ' + amounts.total.toFixed(2) + ' €\n\n'
-          + 'You will receive a confirmation email shortly.\n\n'
-          + '⚠️ SANDBOX MODE — no real money was charged.'
+          + 'You will receive a confirmation email shortly.'
         );
 
         window.location.href = 'index.html';
