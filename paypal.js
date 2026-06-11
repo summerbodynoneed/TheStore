@@ -11,7 +11,7 @@ const PAYPAL_CONFIG = {
   clientId:     'AWqRYC5b3_wWLHLGJlcBfu02uujZR4Ib5een583i1oGl4OXDQ2l9R7GNbm_B9y6drq_Rj1anRMmgCWDy',  // ← Remplace par ton Sandbox Client ID
   currency:     'EUR',
   shippingFee:  0.00,
-  freeShipping: 50.00
+  freeShipping: 15.00
 };
 
 // ── Calcul du montant total ────────────────────────────────────
