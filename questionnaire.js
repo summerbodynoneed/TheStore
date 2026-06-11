@@ -7,13 +7,19 @@
 
 const STORAGE_KEY = 'sbnn_responses';
 
-// Auto-detect URL : localhost vs GitHub Codespaces
+// URL de l'API — met à jour avec ton URL Railway après déploiement
 const API_URL = (function () {
   const h = window.location.hostname;
+  // En local
   if (h === 'localhost' || h === '127.0.0.1') {
     return 'http://localhost:3000/api/responses';
   }
-  return window.location.protocol + '//' + h.replace(/^(\d+)-/, '3000-') + '/api/responses';
+  // Codespaces
+  if (h.includes('github.dev')) {
+    return window.location.protocol + '//' + h.replace(/^(\d+)-/, '3000-') + '/api/responses';
+  }
+  // Production sbnn.store → Railway
+  return 'https://thestore-1vxh.onrender.com/api/responses';
 })();
 
 // ── Collect form data ────────────────────────────────────────
