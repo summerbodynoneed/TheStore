@@ -99,7 +99,7 @@
       "ancienPrix": 19,
       "badge": "New",
       "description": "Lifestyle t-shirt football, perfect to showcase your ball knowledge.",
-      "tailles": ["M"],
+      "tailles": ["M","L"],
       "images": [
         "images/TshirtFoot.png",
         "images/TshirtFootDos.png"
@@ -116,7 +116,7 @@
 
   "meta": {
     "version":       "1.0",
-    "derniereMaj":   "2026-04-30",
+    "derniereMaj":   "2026-07-17",
     "devise":        "EUR",
     "fraisPort":     5.00,
     "seuilGratuit":  15.00
