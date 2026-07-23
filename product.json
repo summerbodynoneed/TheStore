@@ -94,9 +94,9 @@
     {
       "id": 7,
       "nom": "T-shirt Football",
-      "prix": 15,
+      "prix": 19,
       "archive": false,
-      "ancienPrix": 19,
+      "ancienPrix": null,
       "badge": "New",
       "description": "Lifestyle t-shirt football, perfect to showcase your ball knowledge.",
       "tailles": ["M","L"],
