@@ -109,14 +109,14 @@
     },
     {
       "id": 8,
-      "nom": "Selfish",
+      "nom": "Discipline Jacket",
       "prix": 24,
       "archive": false,
       "ancienPrix": null,
-      "badge": "new",
-      "description": "Selfish, a distinctive piece for your everyday style.",
+      "badge": "soon",
+      "description": "Discipline jacket, a windbreaker that keeps you protected from the elements.",
       "tailles": ["S", "M", "L", "XL"],
-      "images": [],
+      "images": ["images/DisciplineJacket.png"],
       "stock": true,
       "categorie": "clothes"
     }
